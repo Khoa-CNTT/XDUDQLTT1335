@@ -112,14 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AhihiController.cs" />
-    <Compile Include="Controllers\DangKyController.cs" />
-    <Compile Include="Controllers\DangNhapController.cs" />
     <Compile Include="Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeGiangVienController.cs" />
     <Compile Include="Controllers\HomeHocVienController.cs" />
-    <Compile Include="Controllers\KhoaHocController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,20 +195,8 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\HomeAdmin\Index.cshtml" />
-    <Content Include="Views\HomeGiangVien\Index.cshtml" />
-    <Content Include="Views\HomeHocVien\Index.cshtml" />
-    <Content Include="Views\KhoaHoc\KhoaHoc.cshtml" />
-    <Content Include="Views\DangNhap\DangNhap.cshtml" />
-    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Shared\_LayoutHocVien.cshtml" />
-    <Content Include="Views\Home\ChiaSe.cshtml" />
-    <Content Include="Views\Home\SuKien.cshtml" />
-    <Content Include="Views\Home\LienHe.cshtml" />
-    <Content Include="Views\Home\TuyenDung.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\DangKy\DangKy.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,7 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Ahihi\" />
+    <Folder Include="Views\HomeAdmin\" />
+    <Folder Include="Views\HomeGiangVien\" />
+    <Folder Include="Views\HomeHocVien\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
