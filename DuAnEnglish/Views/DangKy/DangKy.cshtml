@@ -1,0 +1,159 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "DangKy";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Tùy chỉnh cho SweetAlert2 */
+        .swal2-popup {
+            font-size: 1.2em;
+            border-radius: 15px;
+        }
+
+        .swal2-title {
+            font-size: 2em;
+            color: #FF5733;
+        }
+
+        .swal2-content {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .swal2-confirm {
+            background-color: #4CAF50; /* Màu xanh cho nút Confirm */
+            color: white;
+        }
+
+        .swal2-cancel {
+            background-color: #f44336; /* Màu đỏ cho nút Cancel */
+            color: white;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng Ký</h2>
+        <form action="@Url.Action("DangKy", "DangKy")" method="post">
+            <label for="TenDangNhap"><i class="fa fa-user"></i> Tên đăng nhập</label>
+            <input type="text" id="TenDangNhap" name="TenDangNhap" required />
+
+            <label for="MatKhau"><i class="fa fa-lock"></i> Mật khẩu</label>
+            <input type="password" id="MatKhau" name="MatKhau" required />
+
+            <label for="Email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="email" id="Email" name="Email" required />
+
+            <label for="SDT"><i class="fa fa-phone"></i> Số điện thoại</label>
+            <input type="text" id="SDT" name="SDT" required />
+
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+        </form>
+        <button onclick="window.location.href='@Url.Action("DangNhap", "DangNhap")'" class="btn-secondary">Quay về</button>
+    </div>
+    @if (ViewBag.ThongBao != null)
+    {
+        <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi!',
+                    text: '@Html.Raw(ViewBag.ThongBao)',
+                    background: '#ecf0f1',
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'OK',
+                    showCancelButton: false,
+                    timer: 5000,
+                    customClass: {
+                        popup: 'swal2-popup',
+                        title: 'swal2-title',
+                        content: 'swal2-content',
+                        confirmButton: 'swal2-confirm',
+                        cancelButton: 'swal2-cancel'
+                    },
+                    didOpen: () => {
+                        document.body.style.overflow = 'hidden'; // Ngăn cuộn khi popup mở
+                    },
+                    willClose: () => {
+                        document.body.style.overflow = ''; // Khôi phục cuộn khi popup đóng
+                    }
+                });
+        </script>
+    }
+</body>
+</html>

@@ -7,14 +7,13 @@
     <link href="~/Content/_Layout.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <!-- Tạo liên kết Logo -->
-                <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                <a href="@Url.Action("Index", "HomeAdmin")" class="navbar-brand">
                     <h3>ENGLISH</h3>
                     @*<img src="~/Images/logo.png" alt="Logo" style="height: 40px;" />*@
                 </a>
@@ -22,17 +21,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <!-- Menu -->
-                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Khóa học", "KhoaHoc", "KhoaHoc")</li> @*Tên tiêu đề - Action - Controller*@
-                    <li>@Html.ActionLink("Chia sẻ", "ChiaSe", "Home")</li>
-                    <li>@Html.ActionLink("Sự kiện", "SuKien", "Home")</li>
-                    <li>@Html.ActionLink("Liên hệ", "LienHe", "Home")</li>
-                    <li>@Html.ActionLink("Tuyển dụng", "TuyenDung", "Home")</li>
+                    <li>@Html.ActionLink("Quản lý tài khoản", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Quản lý giảng viên", "KhoaHoc", "KhoaHoc")</li> @*Tên tiêu đề - Action - Controller*@
+                    <li>@Html.ActionLink("Quản lý khóa học", "Share", "Home")</li>
+                    <li>@Html.ActionLink("Quản lý phòng học", "Events", "Home")</li>
+                    <li>@Html.ActionLink("Báo cáo thống kê", "Contact", "Home")</li>
                 </ul>
             </div>
-            <a href="@Url.Action("DangNhap", "DangNhap")"><button>Đăng nhập</button></a>
-            <a href="@Url.Action("DangKy", "DangKy")"><button>Đăng ký</button></a>
-
+            <!-- Nút Đăng Xuất dưới dạng liên kết -->
+            <a href="@Url.Action("DangXuat", "DangNhap")" class="btn btn-danger">Đăng xuất</a>
         </div>
     </div>
 

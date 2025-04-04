@@ -1,7 +1,145 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    ViewBag.Title = "Trang Chủ";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trang Chủ Trung Tâm Tiếng Anh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
 
-<h2>Index</h2>
+        h1, h2, p {
+            margin: 0;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+            .welcome-section h2 {
+                font-size: 3.5em;
+                margin-bottom: 20px;
+            }
+
+            .welcome-section p {
+                font-size: 1.5em;
+                margin-bottom: 40px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .welcome-section .btn-main {
+                background-color: #ff6f61;
+                color: white;
+                padding: 15px 30px;
+                font-size: 18px;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+                .welcome-section .btn-main:hover {
+                    background-color: #ff4c3b;
+                }
+
+        /* Services Section */
+        .services-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .service:hover {
+                transform: translateY(-10px);
+            }
+
+            .service i {
+                font-size: 3em;
+                color: #ff6f61;
+                margin-bottom: 20px;
+            }
+
+            .service h3 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+
+            .service p {
+                font-size: 1.1em;
+            }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+            .testimonials-section h2 {
+                font-size: 2.5em;
+                margin-bottom: 40px;
+            }
+
+        .testimonial {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+            .testimonial span {
+                display: block;
+                margin-top: 10px;
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+
+        /
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="content">
+                <h2>Chào mừng bạn đến với Trung Tâm Tiếng Anh của chúng tôi!</h2>
+                <p>Khám phá phương pháp học tiếng Anh hiệu quả, tự tin giao tiếp và nâng cao khả năng ngôn ngữ của bạn trong môi trường học tập chuyên nghiệp.</p>
+                <button class="btn-main">Khám Phá Khóa Học</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
 

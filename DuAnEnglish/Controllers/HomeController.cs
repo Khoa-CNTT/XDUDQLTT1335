@@ -13,5 +13,25 @@ namespace DuAnEnglish.Controllers
         {
             return View();
         }
+        public ActionResult KhoaHoc()
+        {
+            return View();
+        }
+        public ActionResult ChiaSe()
+        {
+            return View();
+        }
+        public ActionResult SuKien()
+        {
+            return View();
+        }
+        public ActionResult LienHe()
+        {
+            return View();
+        }
+        public ActionResult TuyenDung()
+        {
+            return View();
+        }
     }
 }
