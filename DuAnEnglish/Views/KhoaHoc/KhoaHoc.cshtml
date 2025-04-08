@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DuAnEnglish.Models.KhoaHoc>
+@{
+    if (Session["Role"] != null && Session["Role"].ToString() == "hocvien") // Sửa điều kiện phù hợp với kiểu dữ liệu
+    {
+        Layout = "~/Views/Shared/_LayoutHocVien.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+@{
+    ViewBag.Title = "Khóa Học";
+}
+<h2>Danh sách Khóa Học</h2>
+
+<!-- MENU DANH MỤC -->
+<div style="margin-bottom: 20px;">
+    <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "all" })" style="margin-right: 15px;">Tất cả khóa học</a>
+    <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "TOEIC" })" style="margin-right: 15px;">TOEIC</a>
+    <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "IELTS" })">IELTS</a>
+</div>
+
+<!-- DANH SÁCH KHÓA HỌC -->
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card" style="margin-bottom: 20px;">
+                <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"><img src="~/Images/@item.HinhAnhKH" style="height: 200px;" /></a>
+                <div class="card-body">
+                    <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })">@item.TenKhoaHoc</a>
+                    <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

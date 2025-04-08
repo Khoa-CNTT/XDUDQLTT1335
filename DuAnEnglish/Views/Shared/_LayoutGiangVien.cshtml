@@ -1,7 +1,50 @@
-﻿
-@{
-    ViewBag.Title = "_LayoutGiangVien";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/_Layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Tạo liên kết Logo -->
+                <a href="@Url.Action("Index", "HomeGiangVien")" class="navbar-brand">
+                    <h3>ENGLISH FIVESTARS</h3>
+                    @*<img src="~/Images/logo.png" alt="Logo" style="height: 40px;" />*@
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Menu -->
+                    <li>@Html.ActionLink("Quản lý học viên", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Quản lý tài liệu", "KhoaHoc", "KhoaHoc")</li> @*Tên tiêu đề - Action - Controller*@
+                    <li>@Html.ActionLink("Quản lý phòng học", "Share", "Home")</li>
+                    <li>@Html.ActionLink("Kết quả học tập", "Events", "Home")</li>
+                    <li>@Html.ActionLink("Đánh giá học viên", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Gửi thông báo", "Contact", "Home")</li>
+                </ul>
+            </div>
+            <!-- Nút Đăng Xuất dưới dạng liên kết -->
+            <a href="@Url.Action("DangXuat", "DangNhap")" class="btn btn-danger">Đăng xuất</a>
+        </div>
+    </div>
 
-<h2>_LayoutGiangVien</h2>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - NHOM 8 DTU</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
 

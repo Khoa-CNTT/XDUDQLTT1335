@@ -1,50 +1,66 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/_Layout.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
 
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Tạo liên kết Logo -->
-                <a href="@Url.Action("Index", "Home")" class="navbar-brand">
-                    <h3>ENGLISH</h3>
-                    @*<img src="~/Images/logo.png" alt="Logo" style="height: 40px;" />*@
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="@Url.Action("Index", "Home")" class="flex items-center space-x-2">
+                <h2 class="text-3xl font-bold tracking-wide text-gray-800">ENGLISH FIVESTARS</h2>
+                @* <img src="~/Images/logo.png" alt="Logo" class="h-10" /> *@
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="@Url.Action("Index", "Home")" class="hover:text-gray-600">Trang Chủ</a>
+                <a href="@Url.Action("KhoaHoc", "KhoaHoc")" class="hover:text-gray-600">Khóa học</a>
+                <a href="@Url.Action("ChiaSe", "Home")" class="hover:text-gray-600">Chia sẻ</a>
+                <a href="@Url.Action("SuKien", "Home")" class="hover:text-gray-600">Sự kiện</a>
+                <a href="@Url.Action("LienHe", "Home")" class="hover:text-gray-600">Liên hệ</a>
+                <a href="@Url.Action("TuyenDung", "Home")" class="hover:text-gray-600">Tuyển dụng</a>
+            </nav>
+
+            <!-- Buttons -->
+            <div class="flex space-x-2">
+                <a href="@Url.Action("DangNhap", "DangNhap")">
+                    <button class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">Đăng nhập</button>
+                </a>
+                <a href="@Url.Action("DangKy", "DangKy")">
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">Đăng ký</button>
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Menu -->
-                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Khóa học", "KhoaHoc", "KhoaHoc")</li> @*Tên tiêu đề - Action - Controller*@
-                    <li>@Html.ActionLink("Chia sẻ", "ChiaSe", "Home")</li>
-                    <li>@Html.ActionLink("Sự kiện", "SuKien", "Home")</li>
-                    <li>@Html.ActionLink("Liên hệ", "LienHe", "Home")</li>
-                    <li>@Html.ActionLink("Tuyển dụng", "TuyenDung", "Home")</li>
-                </ul>
-            </div>
-            <a href="@Url.Action("DangNhap", "DangNhap")"><button>Đăng nhập</button></a>
-            <a href="@Url.Action("DangKy", "DangKy")"><button>Đăng ký</button></a>
-
         </div>
-    </div>
+    </header>
 
-    <div class="container body-content">
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8 min-h-[calc(100vh-160px)]">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - NHOM 8 DTU</p>
-        </footer>
-    </div>
+    </main>
 
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4 text-center text-sm text-gray-500">
+            &copy; @DateTime.Now.Year - NHÓM 8 - DTU
+        </div>
+    </footer>
+
 </body>
 </html>

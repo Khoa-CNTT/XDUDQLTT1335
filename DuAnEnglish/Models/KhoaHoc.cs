@@ -24,6 +24,7 @@ namespace DuAnEnglish.Models
     
         public string IDKhoaHoc { get; set; }
         public string TenKhoaHoc { get; set; }
+        public string DanhMuc { get; set; }
         public string MoTa { get; set; }
         public Nullable<decimal> HocPhi { get; set; }
         public string HinhAnhKH { get; set; }

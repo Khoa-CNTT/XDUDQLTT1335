@@ -18,25 +18,30 @@ namespace DuAnEnglish.Controllers
         }
         // POST: Xử lý đăng ký
         [HttpPost]
-        public ActionResult DangKy(string TenDangNhap, string MatKhau, string Email, string SDT)
+        public ActionResult DangKy(string TenDangNhap, string MatKhau, string NhapLaiMatKhau, string Email, string SDT, string HoTen)
         {
+            // So sánh mật khẩu
+            if (MatKhau != NhapLaiMatKhau)
+            {
+                ViewBag.ThongBao = "Mật khẩu và nhập lại mật khẩu không khớp!";
+                return View();
+            }
+
             // Kiểm tra nếu tên đăng nhập đã tồn tại
             var user = db.TaiKhoans.FirstOrDefault(t => t.TenDangNhap == TenDangNhap);
             if (user != null)
             {
                 ViewBag.ThongBao = "Tên đăng nhập đã tồn tại!";
-                return View(); // Quay lại form đăng ký nếu có lỗi
+                return View();
             }
 
             // Kiểm tra định dạng email
             var emailRegex = new Regex(@"^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$", RegexOptions.IgnoreCase);
             bool emailHopLe = emailRegex.IsMatch(Email);
 
-            // Kiểm tra số điện thoại có đúng 10 số không
             var sdtRegex = new Regex(@"^\d{10}$");
             bool sdtHopLe = sdtRegex.IsMatch(SDT);
 
-            // Xử lý 3 trường hợp
             if (!emailHopLe && !sdtHopLe)
             {
                 ViewBag.ThongBao = "Email không hợp lệ! Số điện thoại phải có 10 chữ số!";
@@ -53,8 +58,6 @@ namespace DuAnEnglish.Controllers
                 return View();
             }
 
-
-            // Tạo tài khoản mới
             var taiKhoanMoi = new TaiKhoan
             {
                 TenDangNhap = TenDangNhap,
@@ -68,11 +71,18 @@ namespace DuAnEnglish.Controllers
             db.TaiKhoans.Add(taiKhoanMoi);
             db.SaveChanges();
 
-            // Thông báo thành công và chuyển hướng
-            //ViewBag.SuccessMessage = "Đăng ký thành công!";
-            //return View("DangNhap");
+            var hocVienMoi = new HocVien
+            {
+                IDTenDangNhap = TenDangNhap,
+                TenHV = HoTen,
+                NgaySinh = null,
+                GioiTinh = null,
+                DiaChi = null
+            };
 
-            // Chuyển hướng đến trang đăng nhập
+            db.HocViens.Add(hocVienMoi);
+            db.SaveChanges();
+
             return RedirectToAction("DangNhap", "DangNhap");
         }
     }

@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="trungtamtienganhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChatBotNoiDung">
+          <Key>
+            <PropertyRef Name="MaChat" />
+          </Key>
+          <Property Name="MaChat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CauHoiMau" Type="nvarchar(max)" />
+          <Property Name="TuKhoa" Type="nvarchar(max)" />
+          <Property Name="CauTraLoi" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="DanhGia">
           <Key>
             <PropertyRef Name="IDDanhGia" />
@@ -34,6 +43,10 @@
           </Key>
           <Property Name="IDGiangVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDTenDangNhap" Type="varchar" MaxLength="50" />
+          <Property Name="TenGV" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
           <Property Name="ChuyenMon" Type="nvarchar(max)" />
           <Property Name="BangCap" Type="nvarchar(max)" />
         </EntityType>
@@ -56,9 +69,10 @@
           </Key>
           <Property Name="IDHocVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDTenDangNhap" Type="varchar" MaxLength="50" />
+          <Property Name="TenHV" Type="nvarchar" MaxLength="100" />
           <Property Name="NgaySinh" Type="date" />
           <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
-          <Property Name="DiaChi" Type="nvarchar(max)" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="HocVienLopHoc">
           <Key>
@@ -76,6 +90,7 @@
           </Key>
           <Property Name="IDKhoaHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TenKhoaHoc" Type="nvarchar" MaxLength="255" />
+          <Property Name="DanhMuc" Type="nvarchar" MaxLength="50" />
           <Property Name="MoTa" Type="nvarchar(max)" />
           <Property Name="HocPhi" Type="decimal" Precision="18" Scale="0" />
           <Property Name="HinhAnhKH" Type="nvarchar" MaxLength="50" />
@@ -392,6 +407,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="trungtamtienganhModelStoreContainer">
+          <EntitySet Name="ChatBotNoiDung" EntityType="Self.ChatBotNoiDung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DiemSo" EntityType="Self.DiemSo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
@@ -486,6 +502,15 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="trungtamtienganhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChatBotNoiDung">
+          <Key>
+            <PropertyRef Name="MaChat" />
+          </Key>
+          <Property Name="MaChat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CauHoiMau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuKhoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CauTraLoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="DanhGia">
           <Key>
             <PropertyRef Name="IDDanhGia" />
@@ -518,6 +543,10 @@
           </Key>
           <Property Name="IDGiangVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDTenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenGV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ChuyenMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BangCap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDGiang__619B8048" FromRole="GiangVien" ToRole="DanhGia" />
@@ -544,9 +573,10 @@
           </Key>
           <Property Name="IDHocVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDTenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenHV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NgaySinh" Type="DateTime" Precision="0" />
           <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDHocVi__60A75C0F" FromRole="HocVien" ToRole="DanhGia" />
           <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__HocVien__IDTenDa__3B75D760" FromRole="HocVien" ToRole="TaiKhoan" />
           <NavigationProperty Name="HocVienLopHocs" Relationship="Self.FK__HocVienLo__IDHoc__5629CD9C" FromRole="HocVien" ToRole="HocVienLopHoc" />
@@ -570,6 +600,7 @@
           </Key>
           <Property Name="IDKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TenKhoaHoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DanhMuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HocPhi" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="HinhAnhKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -909,6 +940,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="trungtamtienganhEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChatBotNoiDungs" EntityType="Self.ChatBotNoiDung" />
           <EntitySet Name="DanhGias" EntityType="Self.DanhGia" />
           <EntitySet Name="DiemSoes" EntityType="Self.DiemSo" />
           <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
@@ -1004,6 +1036,16 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="trungtamtienganhModelStoreContainer" CdmEntityContainer="trungtamtienganhEntities">
+          <EntitySetMapping Name="ChatBotNoiDungs">
+            <EntityTypeMapping TypeName="trungtamtienganhModel.ChatBotNoiDung">
+              <MappingFragment StoreEntitySet="ChatBotNoiDung">
+                <ScalarProperty Name="MaChat" ColumnName="MaChat" />
+                <ScalarProperty Name="CauHoiMau" ColumnName="CauHoiMau" />
+                <ScalarProperty Name="TuKhoa" ColumnName="TuKhoa" />
+                <ScalarProperty Name="CauTraLoi" ColumnName="CauTraLoi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DanhGias">
             <EntityTypeMapping TypeName="trungtamtienganhModel.DanhGia">
               <MappingFragment StoreEntitySet="DanhGia">
@@ -1033,6 +1075,10 @@
               <MappingFragment StoreEntitySet="GiangVien">
                 <ScalarProperty Name="IDGiangVien" ColumnName="IDGiangVien" />
                 <ScalarProperty Name="IDTenDangNhap" ColumnName="IDTenDangNhap" />
+                <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="ChuyenMon" ColumnName="ChuyenMon" />
                 <ScalarProperty Name="BangCap" ColumnName="BangCap" />
               </MappingFragment>
@@ -1057,6 +1103,7 @@
               <MappingFragment StoreEntitySet="HocVien">
                 <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
                 <ScalarProperty Name="IDTenDangNhap" ColumnName="IDTenDangNhap" />
+                <ScalarProperty Name="TenHV" ColumnName="TenHV" />
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
@@ -1078,6 +1125,7 @@
               <MappingFragment StoreEntitySet="KhoaHoc">
                 <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
                 <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+                <ScalarProperty Name="DanhMuc" ColumnName="DanhMuc" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="HocPhi" ColumnName="HocPhi" />
                 <ScalarProperty Name="HinhAnhKH" ColumnName="HinhAnhKH" />

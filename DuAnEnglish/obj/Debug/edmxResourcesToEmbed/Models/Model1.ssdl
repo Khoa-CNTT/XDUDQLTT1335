@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="trungtamtienganhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChatBotNoiDung">
+    <Key>
+      <PropertyRef Name="MaChat" />
+    </Key>
+    <Property Name="MaChat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CauHoiMau" Type="nvarchar(max)" />
+    <Property Name="TuKhoa" Type="nvarchar(max)" />
+    <Property Name="CauTraLoi" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="DanhGia">
     <Key>
       <PropertyRef Name="IDDanhGia" />
@@ -29,6 +38,10 @@
     </Key>
     <Property Name="IDGiangVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDTenDangNhap" Type="varchar" MaxLength="50" />
+    <Property Name="TenGV" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
     <Property Name="ChuyenMon" Type="nvarchar(max)" />
     <Property Name="BangCap" Type="nvarchar(max)" />
   </EntityType>
@@ -51,9 +64,10 @@
     </Key>
     <Property Name="IDHocVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDTenDangNhap" Type="varchar" MaxLength="50" />
+    <Property Name="TenHV" Type="nvarchar" MaxLength="100" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
-    <Property Name="DiaChi" Type="nvarchar(max)" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="HocVienLopHoc">
     <Key>
@@ -71,6 +85,7 @@
     </Key>
     <Property Name="IDKhoaHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenKhoaHoc" Type="nvarchar" MaxLength="255" />
+    <Property Name="DanhMuc" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTa" Type="nvarchar(max)" />
     <Property Name="HocPhi" Type="decimal" Precision="18" Scale="0" />
     <Property Name="HinhAnhKH" Type="nvarchar" MaxLength="50" />
@@ -387,6 +402,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="trungtamtienganhModelStoreContainer">
+    <EntitySet Name="ChatBotNoiDung" EntityType="Self.ChatBotNoiDung" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DiemSo" EntityType="Self.DiemSo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />

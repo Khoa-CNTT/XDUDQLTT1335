@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="trungtamtienganhModelStoreContainer" CdmEntityContainer="trungtamtienganhEntities">
+    <EntitySetMapping Name="ChatBotNoiDungs">
+      <EntityTypeMapping TypeName="trungtamtienganhModel.ChatBotNoiDung">
+        <MappingFragment StoreEntitySet="ChatBotNoiDung">
+          <ScalarProperty Name="MaChat" ColumnName="MaChat" />
+          <ScalarProperty Name="CauHoiMau" ColumnName="CauHoiMau" />
+          <ScalarProperty Name="TuKhoa" ColumnName="TuKhoa" />
+          <ScalarProperty Name="CauTraLoi" ColumnName="CauTraLoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DanhGias">
       <EntityTypeMapping TypeName="trungtamtienganhModel.DanhGia">
         <MappingFragment StoreEntitySet="DanhGia">
@@ -30,6 +40,10 @@
         <MappingFragment StoreEntitySet="GiangVien">
           <ScalarProperty Name="IDGiangVien" ColumnName="IDGiangVien" />
           <ScalarProperty Name="IDTenDangNhap" ColumnName="IDTenDangNhap" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="ChuyenMon" ColumnName="ChuyenMon" />
           <ScalarProperty Name="BangCap" ColumnName="BangCap" />
         </MappingFragment>
@@ -54,6 +68,7 @@
         <MappingFragment StoreEntitySet="HocVien">
           <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
           <ScalarProperty Name="IDTenDangNhap" ColumnName="IDTenDangNhap" />
+          <ScalarProperty Name="TenHV" ColumnName="TenHV" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
@@ -75,6 +90,7 @@
         <MappingFragment StoreEntitySet="KhoaHoc">
           <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
           <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+          <ScalarProperty Name="DanhMuc" ColumnName="DanhMuc" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="HocPhi" ColumnName="HocPhi" />
           <ScalarProperty Name="HinhAnhKH" ColumnName="HinhAnhKH" />

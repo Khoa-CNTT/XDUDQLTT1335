@@ -25,6 +25,7 @@ namespace DuAnEnglish.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ChatBotNoiDung> ChatBotNoiDungs { get; set; }
         public virtual DbSet<DanhGia> DanhGias { get; set; }
         public virtual DbSet<DiemSo> DiemSoes { get; set; }
         public virtual DbSet<GiangVien> GiangViens { get; set; }

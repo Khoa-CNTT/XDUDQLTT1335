@@ -23,6 +23,10 @@ namespace DuAnEnglish.Models
     
         public int IDGiangVien { get; set; }
         public string IDTenDangNhap { get; set; }
+        public string TenGV { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public string GioiTinh { get; set; }
+        public string DiaChi { get; set; }
         public string ChuyenMon { get; set; }
         public string BangCap { get; set; }
     

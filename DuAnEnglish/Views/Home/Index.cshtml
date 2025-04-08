@@ -1,145 +1,249 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@{
-    ViewBag.Title = "Trang Chủ";
-}
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <title>Trang Chủ Trung Tâm Tiếng Anh</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung Tâm Anh Ngữ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
+        /* Custom animations */
+        @@keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        h1, h2, p {
-            margin: 0;
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Welcome Section */
-        .welcome-section {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+        /* Hover effects */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-            .welcome-section h2 {
-                font-size: 3.5em;
-                margin-bottom: 20px;
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             }
 
-            .welcome-section p {
-                font-size: 1.5em;
-                margin-bottom: 40px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .welcome-section .btn-main {
-                background-color: #ff6f61;
-                color: white;
-                padding: 15px 30px;
-                font-size: 18px;
-                border: none;
-                border-radius: 50px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-
-                .welcome-section .btn-main:hover {
-                    background-color: #ff4c3b;
-                }
-
-        /* Services Section */
-        .services-section {
-            background-color: #f9f9f9;
-            padding: 60px 0;
-            text-align: center;
+        /* Testimonial quote styling */
+        .testimonial-quote::before {
+            content: "\201C";
+            font-family: 'Font Awesome 5 Free';
+            font-size: 3rem;
+            color: #e2e8f0;
+            position: absolute;
+            left: -10px;
+            top: -20px;
         }
-
-        .services-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .service {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-            .service:hover {
-                transform: translateY(-10px);
-            }
-
-            .service i {
-                font-size: 3em;
-                color: #ff6f61;
-                margin-bottom: 20px;
-            }
-
-            .service h3 {
-                font-size: 1.8em;
-                margin-bottom: 15px;
-            }
-
-            .service p {
-                font-size: 1.1em;
-            }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            background-color: #fff;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-            .testimonials-section h2 {
-                font-size: 2.5em;
-                margin-bottom: 40px;
-            }
-
-        .testimonial {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-            .testimonial span {
-                display: block;
-                margin-top: 10px;
-                font-weight: bold;
-                font-size: 1.1em;
-            }
-
-        /
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Welcome Section -->
-        <section class="welcome-section">
-            <div class="content">
-                <h2>Chào mừng bạn đến với Trung Tâm Tiếng Anh của chúng tôi!</h2>
-                <p>Khám phá phương pháp học tiếng Anh hiệu quả, tự tin giao tiếp và nâng cao khả năng ngôn ngữ của bạn trong môi trường học tập chuyên nghiệp.</p>
-                <button class="btn-main">Khám Phá Khóa Học</button>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <!-- Hero Section -->
+    <section class="relative h-[600px] overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80">
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-4xl animate-fade-in-up">
+                <h1 class="text-5xl font-bold mb-6 leading-tight">Chào mừng đến với Trung Tâm Anh Ngữ</h1>
+                <p class="text-xl mb-8 opacity-90">Nâng cao kỹ năng tiếng Anh của bạn với các khóa học chất lượng hàng đầu</p>
+                <a href="@Url.Action("KhoaHoc","KhoaHoc")" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Khám Phá Các Khóa Học
+                </a>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container mx-auto py-20 px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-6">Về Chúng Tôi</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                Trung tâm Anh ngữ với hơn 15 năm kinh nghiệm trong lĩnh vực đào tạo tiếng Anh, cam kết mang đến chất lượng giáo dục tốt nhất cho học viên.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                <div class="text-blue-600 text-4xl mb-4">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Sứ Mệnh</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Trang bị cho thế hệ trẻ vốn tiếng Anh vững chắc trên bước đường hội nhập thế giới.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                <div class="text-blue-600 text-4xl mb-4">
+                    <i class="fas fa-binoculars"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Tầm Nhìn</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Trở thành trung tâm Anh ngữ hàng đầu, được phụ huynh và học viên tin tưởng lựa chọn.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Các Khóa Học Nổi Bậc</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Các chương trình đào tạo được thiết kế bài bản theo chuẩn quốc tế
+                </p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Course Cards -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-blue-600 text-5xl mb-6">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">TOEIC CƠ BẢN</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Cung cấp kiến thức cơ bản về TOEIC.
+                        Giúp người học làm quen với định dạng đề thi
+                        và các dạng câu hỏi thường gặp.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-blue-600 text-5xl mb-6">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">TOEIC MASTER</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Khóa học chuyên sâu dành cho người
+                        muốn đạt điểm TOEIC cao, tập trung vào mẹo và chiến lược.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-blue-600 text-5xl mb-6">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">IELTS CƠ BẢN</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Khóa học giúp người học xây dựng nền
+                        tảng vững chắc về IELTS.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-blue-600 text-5xl mb-6">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">IELTS MASTER</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Khóa học IELTS Master được thiết kế dành riêng cho những
+                        ai muốn đạt band 9.0, mức điểm cao nhất trong kỳ thi IELTS.
+                    </p>
+                </div>
+                <!-- Add other course cards similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container mx-auto py-20 px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-6">Học Viên Nói Gì Về Chúng Tôi</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white p-8 rounded-xl shadow-md relative">
+                <div class="testimonial-quote"></div>
+                <p class="text-gray-600 italic mb-6 leading-relaxed">
+                    "Khóa học rất bổ ích, giúp em tự tin hơn trong giao tiếp tiếng Anh."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold">Nguyễn Văn A</p>
+                        <p class="text-sm text-gray-500">Học viên IELTS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md relative">
+                <div class="testimonial-quote"></div>
+                <p class="text-gray-600 italic mb-6 leading-relaxed">
+                    "Khóa học rất bổ ích, giúp em tự tin hơn trong giao tiếp tiếng Anh."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold">Nguyễn Văn A</p>
+                        <p class="text-sm text-gray-500">Học viên IELTS</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add other testimonials similarly -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Contact Info -->
+                <div class="mb-8">
+                    <h3 class="text-white text-xl font-bold mb-6">Trung Tâm Anh Ngữ</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-500"></i>
+                            123 Đường Trần Hưng Đạo, TX.Điện Bàn, Tỉnh Quảng Nam
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-blue-500"></i>
+                            0123 456 789
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-500"></i>
+                            lienhe@trungtamanhngu.vn
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mb-8">
+                    <h3 class="text-white text-xl font-bold mb-6">Liên Kết Nhanh</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="hover:text-blue-400 transition-colors">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Trang Chủ
+                            </a>
+                        </li>
+                        <!-- Add other links similarly -->
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="mb-8">
+                    <h3 class="text-white text-xl font-bold mb-6">Kết Nối Với Chúng Tôi</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
-

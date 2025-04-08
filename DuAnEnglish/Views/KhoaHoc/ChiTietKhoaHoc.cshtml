@@ -1,0 +1,25 @@
+﻿@model DuAnEnglish.Models.KhoaHoc
+
+@{
+    ViewBag.Title = "Chi tiết khóa học";
+}
+
+<h2>@Model.TenKhoaHoc</h2>
+
+<div class="row">
+    <!-- Cột bên trái: Hình ảnh khóa học -->
+    <div class="col-md-6">
+        <img src="~/Images/@Model.HinhAnhKH" class="img-fluid" alt="Hình ảnh khóa học" />
+    </div>
+
+    <!-- Cột bên phải: Thông tin chi tiết khóa học -->
+    <div class="col-md-6">
+        <h4>Thông tin chi tiết:</h4>
+        <p><strong>ID Khóa Học:</strong> @Model.IDKhoaHoc</p>
+        <p><strong>Mô Tả:</strong> @Model.MoTa</p>
+        <p><strong>Học Phí:</strong> @String.Format("{0:N0} VNĐ", Model.HocPhi)</p>
+        <p><strong>Số Lượng Chỗ Còn Lại:</strong> @Model.Slot</p>
+        <br />
+        <a href="@Url.Action("DangKy", "KhoaHoc", new { id = Model.IDKhoaHoc })">Đăng ký khóa học</a>
+    </div>
+</div>

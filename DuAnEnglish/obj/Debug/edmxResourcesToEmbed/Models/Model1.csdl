@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="trungtamtienganhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChatBotNoiDung">
+    <Key>
+      <PropertyRef Name="MaChat" />
+    </Key>
+    <Property Name="MaChat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CauHoiMau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TuKhoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CauTraLoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="DanhGia">
     <Key>
       <PropertyRef Name="IDDanhGia" />
@@ -32,6 +41,10 @@
     </Key>
     <Property Name="IDGiangVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDTenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenGV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="ChuyenMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="BangCap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDGiang__619B8048" FromRole="GiangVien" ToRole="DanhGia" />
@@ -58,9 +71,10 @@
     </Key>
     <Property Name="IDHocVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDTenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenHV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDHocVi__60A75C0F" FromRole="HocVien" ToRole="DanhGia" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__HocVien__IDTenDa__3B75D760" FromRole="HocVien" ToRole="TaiKhoan" />
     <NavigationProperty Name="HocVienLopHocs" Relationship="Self.FK__HocVienLo__IDHoc__5629CD9C" FromRole="HocVien" ToRole="HocVienLopHoc" />
@@ -84,6 +98,7 @@
     </Key>
     <Property Name="IDKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenKhoaHoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DanhMuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="HocPhi" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="HinhAnhKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -423,6 +438,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="trungtamtienganhEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChatBotNoiDungs" EntityType="Self.ChatBotNoiDung" />
     <EntitySet Name="DanhGias" EntityType="Self.DanhGia" />
     <EntitySet Name="DiemSoes" EntityType="Self.DiemSo" />
     <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
