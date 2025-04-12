@@ -1,25 +1,69 @@
 ﻿@model DuAnEnglish.Models.KhoaHoc
-
 @{
+    if (Session["Role"] != null && Session["Role"].ToString() == "hocvien")
+    {
+        Layout = "~/Views/Shared/_LayoutHocVien.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
     ViewBag.Title = "Chi tiết khóa học";
 }
 
-<h2>@Model.TenKhoaHoc</h2>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <header class="mb-8 pb-4 border-b-4 border-black">
+        <h1 class="text-4xl font-bold text-gray-900 tracking-tight">@Model.TenKhoaHoc</h1>
+    </header>
 
-<div class="row">
-    <!-- Cột bên trái: Hình ảnh khóa học -->
-    <div class="col-md-6">
-        <img src="~/Images/@Model.HinhAnhKH" class="img-fluid" alt="Hình ảnh khóa học" />
-    </div>
+    <div class="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+        <!-- Image Column -->
+        <div class="md:w-1/2 relative bg-gray-50 p-8">
+            <img src="~/Images/@Model.HinhAnhKH"
+                 class="w-full h-auto object-contain max-h-[500px] mx-auto"
+                 alt="Hình ảnh khóa học @Model.TenKhoaHoc"
+                 loading="lazy" />
+        </div>
 
-    <!-- Cột bên phải: Thông tin chi tiết khóa học -->
-    <div class="col-md-6">
-        <h4>Thông tin chi tiết:</h4>
-        <p><strong>ID Khóa Học:</strong> @Model.IDKhoaHoc</p>
-        <p><strong>Mô Tả:</strong> @Model.MoTa</p>
-        <p><strong>Học Phí:</strong> @String.Format("{0:N0} VNĐ", Model.HocPhi)</p>
-        <p><strong>Số Lượng Chỗ Còn Lại:</strong> @Model.Slot</p>
-        <br />
-        <a href="@Url.Action("DangKy", "KhoaHoc", new { id = Model.IDKhoaHoc })">Đăng ký khóa học</a>
+        <!-- Information Column -->
+        <div class="md:w-1/2 p-8 space-y-6">
+            <div class="space-y-6">
+                <!-- Course ID -->
+                <div>
+                    <span class="text-xs font-semibold uppercase text-blue-600 tracking-wide">ID KHÓA HỌC</span>
+                    <p class="text-lg font-mono text-gray-700 mt-1">#@Model.IDKhoaHoc</p>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <span class="text-xs font-semibold uppercase text-blue-600 tracking-wide">MÔ TẢ</span>
+                    <p class="text-gray-700 leading-relaxed mt-1 whitespace-pre-line">@Model.MoTa</p>
+                </div>
+
+                <!-- Price -->
+                <!-- ... các phần khác giữ nguyên ... -->
+                <div class="md:w-1/2 p-8 space-y-6">
+                    <div class="space-y-6">
+                        <!-- Price -->
+                        <div>
+                            <span class="text-xs font-semibold uppercase text-blue-600 tracking-wide">HỌC PHÍ</span>
+                            <p class="text-2xl font-bold text-gray-900 mt-1">
+                                @String.Format("{0:N0} VNĐ", Model.HocPhi)
+                            </p>
+                        </div>
+                    </div>
+                    <!-- ... các phần khác giữ nguyên ... -->
+                </div>
+            </div>
+
+            <!-- View Classes Button -->
+            <a href="@Url.Action("DanhSachLopHoc", "LopHoc", new { id = Model.IDKhoaHoc })"
+               class="inline-block w-full bg-black hover:bg-gray-700 text-white px-6 py-3 rounded-lg
+                      transition-all duration-300 transform hover:shadow-lg
+                      text-center font-semibold tracking-wide">
+                XEM LỚP HỌC
+            </a>
+        </div>
     </div>
 </div>

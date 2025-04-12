@@ -16,20 +16,40 @@
         <MappingFragment StoreEntitySet="DanhGia">
           <ScalarProperty Name="IDDanhGia" ColumnName="IDDanhGia" />
           <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
-          <ScalarProperty Name="IDGiangVien" ColumnName="IDGiangVien" />
+          <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
           <ScalarProperty Name="NhanXet" ColumnName="NhanXet" />
           <ScalarProperty Name="NgayDanhGia" ColumnName="NgayDanhGia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DiemSoes">
-      <EntityTypeMapping TypeName="trungtamtienganhModel.DiemSo">
-        <MappingFragment StoreEntitySet="DiemSo">
+    <EntitySetMapping Name="DiemIELTS">
+      <EntityTypeMapping TypeName="trungtamtienganhModel.DiemIELT">
+        <MappingFragment StoreEntitySet="DiemIELTS">
           <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
           <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
           <ScalarProperty Name="DiemNghe" ColumnName="DiemNghe" />
           <ScalarProperty Name="DiemNoi" ColumnName="DiemNoi" />
           <ScalarProperty Name="DiemDoc" ColumnName="DiemDoc" />
+          <ScalarProperty Name="DiemViet" ColumnName="DiemViet" />
+          <ScalarProperty Name="TongDiem" ColumnName="TongDiem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiemTOEICs">
+      <EntityTypeMapping TypeName="trungtamtienganhModel.DiemTOEIC">
+        <MappingFragment StoreEntitySet="DiemTOEIC">
+          <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
+          <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
+          <ScalarProperty Name="Part1" ColumnName="Part1" />
+          <ScalarProperty Name="Part2" ColumnName="Part2" />
+          <ScalarProperty Name="Part3" ColumnName="Part3" />
+          <ScalarProperty Name="Part4" ColumnName="Part4" />
+          <ScalarProperty Name="DiemNghe" ColumnName="DiemNghe" />
+          <ScalarProperty Name="Part5" ColumnName="Part5" />
+          <ScalarProperty Name="Part6" ColumnName="Part6" />
+          <ScalarProperty Name="Part7" ColumnName="Part7" />
+          <ScalarProperty Name="DiemDoc" ColumnName="DiemDoc" />
+          <ScalarProperty Name="DiemNoi" ColumnName="DiemNoi" />
           <ScalarProperty Name="DiemViet" ColumnName="DiemViet" />
           <ScalarProperty Name="TongDiem" ColumnName="TongDiem" />
         </MappingFragment>
@@ -80,8 +100,6 @@
         <MappingFragment StoreEntitySet="HocVienLopHoc">
           <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
           <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-          <ScalarProperty Name="DiemDanh" ColumnName="DiemDanh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,19 +112,6 @@
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="HocPhi" ColumnName="HocPhi" />
           <ScalarProperty Name="HinhAnhKH" ColumnName="HinhAnhKH" />
-          <ScalarProperty Name="Slot" ColumnName="Slot" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LichHocs">
-      <EntityTypeMapping TypeName="trungtamtienganhModel.LichHoc">
-        <MappingFragment StoreEntitySet="LichHoc">
-          <ScalarProperty Name="IDLichHoc" ColumnName="IDLichHoc" />
-          <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
-          <ScalarProperty Name="Ngayhoc" ColumnName="Ngayhoc" />
-          <ScalarProperty Name="GioBatDau" ColumnName="GioBatDau" />
-          <ScalarProperty Name="GioKetThuc" ColumnName="GioKetThuc" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -127,7 +132,10 @@
           <ScalarProperty Name="TenLop" ColumnName="TenLop" />
           <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
           <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="Slot" ColumnName="Slot" />
+          <ScalarProperty Name="ThuTrongTuan" ColumnName="ThuTrongTuan" />
+          <ScalarProperty Name="GioHocBD" ColumnName="GioHocBD" />
+          <ScalarProperty Name="GioHocKT" ColumnName="GioHocKT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -177,6 +185,7 @@
       <EntityTypeMapping TypeName="trungtamtienganhModel.ThanhToan">
         <MappingFragment StoreEntitySet="ThanhToan">
           <ScalarProperty Name="IDThanhToan" ColumnName="IDThanhToan" />
+          <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
           <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
           <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
           <ScalarProperty Name="SoKhoaHoc" ColumnName="SoKhoaHoc" />
@@ -193,6 +202,7 @@
           <ScalarProperty Name="IDThongBao" ColumnName="IDThongBao" />
           <ScalarProperty Name="IDNguoiGui" ColumnName="IDNguoiGui" />
           <ScalarProperty Name="IDNguoiNhan" ColumnName="IDNguoiNhan" />
+          <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
           <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="NgayGui" ColumnName="NgayGui" />

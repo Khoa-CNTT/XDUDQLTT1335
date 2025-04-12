@@ -21,6 +21,7 @@ namespace DuAnEnglish.Models
         }
     
         public int IDThanhToan { get; set; }
+        public string IDLopHoc { get; set; }
         public string TenDangNhap { get; set; }
         public string IDKhoaHoc { get; set; }
         public Nullable<int> SoKhoaHoc { get; set; }
@@ -32,6 +33,7 @@ namespace DuAnEnglish.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GiaoDichVNPAY> GiaoDichVNPAYs { get; set; }
         public virtual KhoaHoc KhoaHoc { get; set; }
+        public virtual LopHoc LopHoc { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

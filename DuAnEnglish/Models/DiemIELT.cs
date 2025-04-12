@@ -12,15 +12,16 @@ namespace DuAnEnglish.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LichHoc
+    public partial class DiemIELT
     {
-        public int IDLichHoc { get; set; }
-        public Nullable<int> IDLopHoc { get; set; }
-        public Nullable<System.DateTime> Ngayhoc { get; set; }
-        public Nullable<System.TimeSpan> GioBatDau { get; set; }
-        public Nullable<System.TimeSpan> GioKetThuc { get; set; }
-        public string TrangThai { get; set; }
+        public int IDHocVien { get; set; }
+        public string IDLopHoc { get; set; }
+        public Nullable<decimal> DiemNghe { get; set; }
+        public Nullable<decimal> DiemNoi { get; set; }
+        public Nullable<decimal> DiemDoc { get; set; }
+        public Nullable<decimal> DiemViet { get; set; }
+        public Nullable<decimal> TongDiem { get; set; }
     
-        public virtual LopHoc LopHoc { get; set; }
+        public virtual HocVienLopHoc HocVienLopHoc { get; set; }
     }
 }

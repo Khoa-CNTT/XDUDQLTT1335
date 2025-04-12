@@ -27,13 +27,13 @@ namespace DuAnEnglish.Models
     
         public virtual DbSet<ChatBotNoiDung> ChatBotNoiDungs { get; set; }
         public virtual DbSet<DanhGia> DanhGias { get; set; }
-        public virtual DbSet<DiemSo> DiemSoes { get; set; }
+        public virtual DbSet<DiemIELT> DiemIELTS { get; set; }
+        public virtual DbSet<DiemTOEIC> DiemTOEICs { get; set; }
         public virtual DbSet<GiangVien> GiangViens { get; set; }
         public virtual DbSet<GiaoDichVNPAY> GiaoDichVNPAYs { get; set; }
         public virtual DbSet<HocVien> HocViens { get; set; }
         public virtual DbSet<HocVienLopHoc> HocVienLopHocs { get; set; }
         public virtual DbSet<KhoaHoc> KhoaHocs { get; set; }
-        public virtual DbSet<LichHoc> LichHocs { get; set; }
         public virtual DbSet<LoaiTaiKhoan> LoaiTaiKhoans { get; set; }
         public virtual DbSet<LopHoc> LopHocs { get; set; }
         public virtual DbSet<PhongHoc> PhongHocs { get; set; }

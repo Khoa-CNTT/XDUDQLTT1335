@@ -14,6 +14,10 @@ namespace DuAnEnglish.Controllers
         // Dùng để hiển thị trang đăng nhập
         public ActionResult DangNhap()
         {
+            if (TempData["ThongBaoDangNhap"] != null)
+            {
+                ViewBag.ThongBao = TempData["ThongBaoDangNhap"];
+            }
             return View();
         }
 

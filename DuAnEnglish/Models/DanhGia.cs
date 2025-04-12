@@ -16,11 +16,11 @@ namespace DuAnEnglish.Models
     {
         public int IDDanhGia { get; set; }
         public Nullable<int> IDHocVien { get; set; }
-        public Nullable<int> IDGiangVien { get; set; }
+        public string IDKhoaHoc { get; set; }
         public string NhanXet { get; set; }
         public Nullable<System.DateTime> NgayDanhGia { get; set; }
     
-        public virtual GiangVien GiangVien { get; set; }
         public virtual HocVien HocVien { get; set; }
+        public virtual KhoaHoc KhoaHoc { get; set; }
     }
 }

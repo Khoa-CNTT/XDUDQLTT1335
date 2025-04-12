@@ -4,42 +4,44 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5ac5aec3041e46d98d602330d7653336" Name="Diagram1">
+      <Diagram DiagramId="bdba9afcd3da4f29882887c0889ac6a3" Name="Diagram1">
         <EntityTypeShape EntityType="trungtamtienganhModel.ChatBotNoiDung" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.DanhGia" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.DiemSo" Width="1.5" PointX="12" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.GiangVien" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.GiaoDichVNPAY" Width="1.5" PointX="10.5" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.HocVien" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.HocVienLopHoc" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.KhoaHoc" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.LichHoc" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.LopHoc" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.PhongHoc" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.TaiKhoan" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.TaiLieu" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.ThanhToan" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.ThongBao" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__DanhGia__IDGiang__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__DanhGia__IDHocVi__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__DiemSo__59FA5E80" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__GiangVien__IDTen__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__LopHoc__IDGiangV__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__GiaoDichV__IDTha__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__HocVien__IDTenDa__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__HocVienLo__IDHoc__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__HocVienLo__IDLop__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__LopHoc__IDKhoaHo__44FF419A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.DanhGia" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.DiemIELT" Width="1.5" PointX="12" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.DiemTOEIC" Width="1.5" PointX="12" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.GiangVien" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.GiaoDichVNPAY" Width="1.5" PointX="12" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.HocVien" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.HocVienLopHoc" Width="1.5" PointX="9.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.KhoaHoc" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.LopHoc" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.PhongHoc" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.TaiKhoan" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.TaiLieu" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.ThanhToan" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.ThongBao" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__DanhGia__IDHocVi__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__DanhGia__IDKhoaH__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__DiemIELTS__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__DiemTOEIC__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__GiangVien__IDTen__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__LopHoc__IDGiangV__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__GiaoDichV__IDTha__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__HocVien__IDTenDa__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__HocVienLo__IDHoc__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__HocVienLo__IDLop__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__LopHoc__IDKhoaHo__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="trungtamtienganhModel.FK__TaiLieu__IDKhoaH__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__ThanhToan__IDKho__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__LichHoc__IDLopHo__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__TaiKhoan__LoaiTK__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__LopHoc__IDPhongH__46E78A0C" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__ThanhToan__TenDa__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__ThongBao__IDNguo__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="trungtamtienganhModel.FK__ThongBao__IDNguo__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__ThanhToan__IDKho__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__TaiKhoan__LoaiTK__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__LopHoc__IDPhongH__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__ThanhToan__IDLop__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__ThongBao__IDLopH__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__ThanhToan__TenDa__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__ThongBao__IDNguo__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="trungtamtienganhModel.FK__ThongBao__IDNguo__619B8048" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

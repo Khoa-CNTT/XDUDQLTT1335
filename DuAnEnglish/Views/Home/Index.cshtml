@@ -23,7 +23,6 @@
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out;
         }
-
         /* Hover effects */
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -33,7 +32,6 @@
                 transform: translateY(-5px);
                 box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             }
-
         /* Testimonial quote styling */
         .testimonial-quote::before {
             content: "\201C";
@@ -48,22 +46,21 @@
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
 
-    <!-- Hero Section -->
+    <!-- Hero Section with red gradient -->
     <section class="relative h-[600px] overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80">
-        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ce3235]/80 to-red-800/80"></div>
         <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-center text-white px-4 max-w-4xl animate-fade-in-up">
                 <h1 class="text-5xl font-bold mb-6 leading-tight">Chào mừng đến với Trung Tâm Anh Ngữ</h1>
                 <p class="text-xl mb-8 opacity-90">Nâng cao kỹ năng tiếng Anh của bạn với các khóa học chất lượng hàng đầu</p>
-                <a href="@Url.Action("KhoaHoc","KhoaHoc")" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href='@Url.Action("KhoaHoc","KhoaHoc")' class="inline-block bg-[#ce3235] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Khám Phá Các Khóa Học
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with red icons -->
     <section class="container mx-auto py-20 px-4">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold mb-6">Về Chúng Tôi</h2>
@@ -73,7 +70,7 @@
         </div>
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div class="bg-white p-8 rounded-xl shadow-md card-hover">
-                <div class="text-blue-600 text-4xl mb-4">
+                <div class="text-[#ce3235] text-4xl mb-4">
                     <i class="fas fa-bullseye"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Sứ Mệnh</h3>
@@ -82,7 +79,7 @@
                 </p>
             </div>
             <div class="bg-white p-8 rounded-xl shadow-md card-hover">
-                <div class="text-blue-600 text-4xl mb-4">
+                <div class="text-[#ce3235] text-4xl mb-4">
                     <i class="fas fa-binoculars"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Tầm Nhìn</h3>
@@ -93,7 +90,7 @@
         </div>
     </section>
 
-    <!-- Courses Section -->
+    <!-- Courses Section with red icons -->
     <section class="bg-gradient-to-b from-gray-50 to-white py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -103,9 +100,9 @@
                 </p>
             </div>
             <div class="grid md:grid-cols-4 gap-6">
-                <!-- Course Cards -->
+                <!-- Course Card 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
-                    <div class="text-blue-600 text-5xl mb-6">
+                    <div class="text-[#ce3235] text-5xl mb-6">
                         <i class="fas fa-baby"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">TOEIC CƠ BẢN</h3>
@@ -115,8 +112,9 @@
                         và các dạng câu hỏi thường gặp.
                     </p>
                 </div>
+                <!-- Course Card 2 -->
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
-                    <div class="text-blue-600 text-5xl mb-6">
+                    <div class="text-[#ce3235] text-5xl mb-6">
                         <i class="fas fa-baby"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">TOEIC MASTER</h3>
@@ -125,8 +123,9 @@
                         muốn đạt điểm TOEIC cao, tập trung vào mẹo và chiến lược.
                     </p>
                 </div>
+                <!-- Course Card 3 -->
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
-                    <div class="text-blue-600 text-5xl mb-6">
+                    <div class="text-[#ce3235] text-5xl mb-6">
                         <i class="fas fa-baby"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">IELTS CƠ BẢN</h3>
@@ -135,8 +134,9 @@
                         tảng vững chắc về IELTS.
                     </p>
                 </div>
+                <!-- Course Card 4 -->
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
-                    <div class="text-blue-600 text-5xl mb-6">
+                    <div class="text-[#ce3235] text-5xl mb-6">
                         <i class="fas fa-baby"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">IELTS MASTER</h3>
@@ -145,12 +145,11 @@
                         ai muốn đạt band 9.0, mức điểm cao nhất trong kỳ thi IELTS.
                     </p>
                 </div>
-                <!-- Add other course cards similarly -->
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section with updated red avatars -->
     <section class="container mx-auto py-20 px-4">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold mb-6">Học Viên Nói Gì Về Chúng Tôi</h2>
@@ -162,7 +161,7 @@
                     "Khóa học rất bổ ích, giúp em tự tin hơn trong giao tiếp tiếng Anh."
                 </p>
                 <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                    <div class="w-12 h-12 rounded-full bg-[#ce3235] flex items-center justify-center text-white mr-4">
                         <i class="fas fa-user"></i>
                     </div>
                     <div>
@@ -177,7 +176,7 @@
                     "Khóa học rất bổ ích, giúp em tự tin hơn trong giao tiếp tiếng Anh."
                 </p>
                 <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                    <div class="w-12 h-12 rounded-full bg-[#ce3235] flex items-center justify-center text-white mr-4">
                         <i class="fas fa-user"></i>
                     </div>
                     <div>
@@ -186,29 +185,28 @@
                     </div>
                 </div>
             </div>
-            <!-- Add other testimonials similarly -->
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <!-- Footer with updated contact info and original social media logos -->
+    <footer class="bg-[#ce3235] text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Contact Info -->
                 <div class="mb-8">
                     <h3 class="text-white text-xl font-bold mb-6">Trung Tâm Anh Ngữ</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-3 text-blue-500"></i>
+                            <i class="fas fa-map-marker-alt mr-3 text-white"></i>
                             123 Đường Trần Hưng Đạo, TX.Điện Bàn, Tỉnh Quảng Nam
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone mr-3 text-blue-500"></i>
+                            <i class="fas fa-phone mr-3 text-white"></i>
                             0123 456 789
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-blue-500"></i>
-                            lienhe@trungtamanhngu.vn
+                            <i class="fas fa-envelope mr-3 text-white"></i>
+                            lienhe@trungtamanhngufivestars.vn
                         </li>
                     </ul>
                 </div>
@@ -218,7 +216,7 @@
                     <h3 class="text-white text-xl font-bold mb-6">Liên Kết Nhanh</h3>
                     <ul class="space-y-3">
                         <li>
-                            <a href="#" class="hover:text-blue-400 transition-colors">
+                            <a href="#" class="hover:text-red-200 transition-colors">
                                 <i class="fas fa-chevron-right mr-2 text-sm"></i>
                                 Trang Chủ
                             </a>
@@ -227,14 +225,14 @@
                     </ul>
                 </div>
 
-                <!-- Social Media -->
+                <!-- Social Media: giữ nguyên màu gốc của logo, ngoại trừ YouTube -->
                 <div class="mb-8">
                     <h3 class="text-white text-xl font-bold mb-6">Kết Nối Với Chúng Tôi</h3>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                        <a href="#" class="w-10 h-10 rounded-full bg-red-800 flex items-center justify-center text-white hover:bg-red-900 transition-colors">
                             <i class="fab fa-youtube"></i>
                         </a>
                         <a href="#" class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
@@ -245,5 +243,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>

@@ -15,11 +15,10 @@ namespace DuAnEnglish.Models
     public partial class HocVienLopHoc
     {
         public int IDHocVien { get; set; }
-        public int IDLopHoc { get; set; }
-        public string TrangThai { get; set; }
-        public Nullable<System.DateTime> DiemDanh { get; set; }
+        public string IDLopHoc { get; set; }
     
-        public virtual DiemSo DiemSo { get; set; }
+        public virtual DiemIELT DiemIELT { get; set; }
+        public virtual DiemTOEIC DiemTOEIC { get; set; }
         public virtual HocVien HocVien { get; set; }
         public virtual LopHoc LopHoc { get; set; }
     }

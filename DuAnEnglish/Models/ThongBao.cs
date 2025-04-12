@@ -17,10 +17,12 @@ namespace DuAnEnglish.Models
         public int IDThongBao { get; set; }
         public string IDNguoiGui { get; set; }
         public string IDNguoiNhan { get; set; }
+        public string IDLopHoc { get; set; }
         public string TieuDe { get; set; }
         public string NoiDung { get; set; }
         public Nullable<System.DateTime> NgayGui { get; set; }
     
+        public virtual LopHoc LopHoc { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
         public virtual TaiKhoan TaiKhoan1 { get; set; }
     }

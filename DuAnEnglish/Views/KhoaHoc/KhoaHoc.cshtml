@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<DuAnEnglish.Models.KhoaHoc>
 @{
-    if (Session["Role"] != null && Session["Role"].ToString() == "hocvien") // Sửa điều kiện phù hợp với kiểu dữ liệu
+    // Lựa chọn layout dựa theo vai trò của người dùng
+    if (Session["Role"] != null && Session["Role"].ToString() == "hocvien")
     {
         Layout = "~/Views/Shared/_LayoutHocVien.cshtml";
     }
@@ -12,27 +13,309 @@
 @{
     ViewBag.Title = "Khóa Học";
 }
-<h2>Danh sách Khóa Học</h2>
+
+<!-- Banner lớn -->
+<div class="banner" style="background-image: url('https://anhngugalaxy.com/wp-content/uploads/2020/11/home_banner_1920_420px.jpg'); background-size: cover; background-position: center; height: 300px; display: flex; align-items: center; justify-content: center;">
+    <!-- Nếu muốn thêm nội dung banner, bạn có thể đặt tại đây -->
+</div>
 
 <!-- MENU DANH MỤC -->
-<div style="margin-bottom: 20px;">
-    <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "all" })" style="margin-right: 15px;">Tất cả khóa học</a>
-    <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "TOEIC" })" style="margin-right: 15px;">TOEIC</a>
-    <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "IELTS" })">IELTS</a>
+<div class="container mx-auto px-4 py-8">
+    <div class="flex justify-center mb-8">
+        <div class="inline-flex rounded-full bg-gray-100 p-1 shadow-inner">
+            <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "all" })"
+               class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-white hover:shadow-md hover:text-[#00aab5] mx-1">
+                Tất cả khóa học
+            </a>
+            <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "TOEIC" })"
+               class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-white hover:shadow-md hover:text-[#00aab5] mx-1">
+                TOEIC
+            </a>
+            <a href="@Url.Action("KhoaHoc", "KhoaHoc", new { danhmuc = "IELTS" })"
+               class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-white hover:shadow-md hover:text-[#00aab5] mx-1">
+                IELTS
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- DANH SÁCH KHÓA HỌC -->
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4">
-            <div class="card" style="margin-bottom: 20px;">
-                <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"><img src="~/Images/@item.HinhAnhKH" style="height: 200px;" /></a>
-                <div class="card-body">
-                    <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })">@item.TenKhoaHoc</a>
-                    <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })" class="btn btn-primary">Xem chi tiết</a>
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        @foreach (var item in Model)
+        {
+            <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"
+                   class="block overflow-hidden rounded-t-xl">
+                    <img src="~/Images/@item.HinhAnhKH"
+                         alt="@item.TenKhoaHoc"
+                         class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                </a>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">@item.TenKhoaHoc</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                        Khóa học được thiết kế với nội dung cập nhật, phù hợp với nhu cầu đào tạo tiếng Anh hiện đại.
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                        <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"
+                           class="flex items-center text-[#00aab5] font-semibold hover:text-[#008996] transition-colors">
+                            Xem chi tiết
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ribbon badge -->
+                <div class="absolute top-4 right-4 bg-[#fcaf17] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                    Hot
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Bắt đầu khối 4 Quyền Lợi (bố cục ngang) -->
+<div class="container my-8 mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">
+        4 Quyền Lợi Của Khóa Học Tiếng Anh Online Tại ENGLISH FIVESTARS
+    </h2>
+
+    <div class="flex flex-nowrap overflow-x-auto pb-4 gap-4 scrollbar-hide">
+        <!-- Quyền lợi 1 -->
+        <div class="flex-shrink-0 w-72">
+            <div class="h-full flex flex-col items-center text-center p-6 bg-[#00aab5] rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-full mb-4 overflow-hidden rounded-lg">
+                    <img src="https://aten.edu.vn/wp-content/uploads/2022/06/confident-man-freelancer.png"
+                         alt="Học linh hoạt"
+                         class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <h5 class="text-lg font-bold mb-3 text-gray-800">
+                    HỌC TRỰC TUYẾN KHI CẦN, TRỰC TIẾP TẠI TRUNG TÂM KHI MUỐN
+                </h5>
+                <p class="text-sm text-gray-600">
+                    Chưa một khoá học nào trên thị trường cho phép bạn tự do lựa chọn phương thức học...
+                </p>
+            </div>
+        </div>
+
+        <!-- Quyền lợi 2 -->
+        <div class="flex-shrink-0 w-72">
+            <div class="h-full flex flex-col items-center text-center p-6 bg-[#fcaf17] rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-full mb-4 overflow-hidden rounded-lg">
+                    <img src="https://aten.edu.vn/wp-content/uploads/2022/06/freelancer.png"
+                         alt="Học 1-1"
+                         class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <h5 class="text-lg font-bold mb-3 text-gray-800">
+                    HỌC 1 THẦY 1 TRÒ VỚI LỘ TRÌNH HỌC CHẮC CHẮN GIỎI
+                </h5>
+                <p class="text-sm text-gray-600">
+                    100% tiết học sẽ chỉ có 1 mình bạn, tạo điều kiện tương tác tối đa với Giảng viên...
+                </p>
+            </div>
+        </div>
+
+        <!-- Quyền lợi 3 -->
+        <div class="flex-shrink-0 w-72">
+            <div class="h-full flex flex-col items-center text-center p-6 bg-[#8cc63f] rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-full mb-4 overflow-hidden rounded-lg">
+                    <img src="https://aten.edu.vn/wp-content/uploads/2022/06/man-freelancer.png"
+                         alt="Giao tiếp trọn đời"
+                         class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <h5 class="text-lg font-bold mb-3 text-gray-800">
+                    THAM GIA MIỄN PHÍ KHOÁ “GIAO TIẾP TRỌN ĐỜI”
+                </h5>
+                <p class="text-sm text-gray-600">
+                    “Giao tiếp Trọn đời” là khoá học “đặc sản” giúp Aten làm nên thương hiệu...
+                </p>
+            </div>
+        </div>
+
+        <!-- Quyền lợi 4 -->
+        <div class="flex-shrink-0 w-72">
+            <div class="h-full flex flex-col items-center text-center p-6 bg-[#00bce4] rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-full mb-4 overflow-hidden rounded-lg">
+                    <img src="https://aten.edu.vn/wp-content/uploads/2022/06/self-confident-man-freelancer.png"
+                         alt="Cam kết đầu ra"
+                         class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <h5 class="text-lg font-bold mb-3 text-gray-800">
+                    CAM KẾT ĐẦU RA CHỈ SAU 60H HỌC BẰNG HỢP ĐỒNG
+                </h5>
+                <p class="text-sm text-gray-600">
+                    Trước kia bạn từng cảm thấy xấu hổ, tự ti, thất bại với tiếng Anh; sau 60h học, bạn trở thành chuyên gia giao tiếp!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Khối đối tượng phù hợp -->
+<div class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12 text-[#00aab5]">
+        KHÓA HỌC TIẾNG ANH ONLINE NÀY DÀNH CHO AI
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Item 1 -->
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-[#fcaf17]">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🎯 Người vượt trội</h3>
+            <p class="text-gray-600 leading-relaxed">
+                Những cá nhân cam kết học tập nghiêm túc ngay cả trong nghịch cảnh, sẵn sàng đột phá để dẫn đầu.
+            </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-[#8cc63f]">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">⏰ Người bận rộn</h3>
+            <p class="text-gray-600 leading-relaxed">
+                Dành cho người có lịch trình thất thường, cần sự linh hoạt tuyệt đối về thời gian và địa điểm học.
+            </p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-[#00bce4]">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🎯 Người khó tính</h3>
+            <p class="text-gray-600 leading-relaxed">
+                Không chấp nhận các khóa học đại trà; bạn cần kiến thức chi tiết, thực chiến để tự tin đối mặt với khách hàng.
+            </p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-[#00aab5]">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🔒 Người cần riêng tư</h3>
+            <p class="text-gray-600 leading-relaxed">
+                Muốn môi trường học an toàn để thể hiện điểm yếu tiếng Anh mà không lo bị đánh giá.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Khối lợi ích sau khóa học -->
+<div class="container mx-auto px-4 py-16 bg-gradient-to-b from-red-50 to-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-red-800 animate-fade-in-down"
+            data-aos="fade-up">
+            BẠN SẼ NHẬN ĐƯỢC GÌ SAU KHÓA HỌC?
+        </h2>
+
+        <!-- Highlight chính -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 border-2 border-red-200 transform transition-all
+            hover:scale-105 hover:shadow-2xl"
+             data-aos="zoom-in"
+             data-aos-delay="200">
+            <p class="text-xl md:text-2xl font-semibold text-center text-gray-800 leading-relaxed">
+                "Chỉ sau 60 giờ, bạn sẽ tự tin giao tiếp tiếng Anh chuyên nghiệp trong chính lĩnh vực của mình!"
+            </p>
+        </div>
+
+        <!-- Danh sách lợi ích -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Benefit 1 -->
+            <div class="flex items-start p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all
+                duration-300 transform hover:-translate-y-2 border-l-4 border-red-500"
+                 data-aos="fade-right"
+                 data-aos-delay="300">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4
+                    transition-colors duration-300 group-hover:bg-red-200">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Phản xạ linh hoạt, đa kỹ năng</h3>
+                    <p class="text-gray-600">
+                        Nắm vững 4 kỹ năng Nghe – Nói – Đọc – Viết từ nền tảng đến nâng cao. Giao tiếp nhanh, xử lý tình huống nhạy bén trong mọi ngữ cảnh.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="flex items-start p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all
+                duration-300 transform hover:-translate-y-2 border-l-4 border-red-500"
+                 data-aos="fade-left"
+                 data-aos-delay="400">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4
+                    transition-colors duration-300 group-hover:bg-red-200">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Tự tin đàm phán & thuyết phục</h3>
+                    <p class="text-gray-600">
+                        Giao tiếp trôi chảy với khách hàng và đối tác quốc tế. Làm chủ cuộc trò chuyện, gây ấn tượng ngay từ lần đầu gặp mặt.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="flex items-start p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all
+                duration-300 transform hover:-translate-y-2 border-l-4 border-red-500"
+                 data-aos="fade-right"
+                 data-aos-delay="500">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4
+                    transition-colors duration-300 group-hover:bg-red-200">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Chuẩn chỉnh trong từng câu chữ</h3>
+                    <p class="text-gray-600">
+                        Viết email, báo cáo, tin nhắn công việc rõ ràng – lịch thiệp – chuyên nghiệp. Gây ấn tượng qua từng văn bản bạn gửi đi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="flex items-start p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all
+                duration-300 transform hover:-translate-y-2 border-l-4 border-red-500"
+                 data-aos="fade-left"
+                 data-aos-delay="600">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4
+                    transition-colors duration-300 group-hover:bg-red-200">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Chứng chỉ quốc tế uy tín</h3>
+                    <p class="text-gray-600">
+                        Cam kết đạt trình độ B2 Châu Âu (tương đương IELTS 5.5 / TOEIC 600) – có hợp đồng đào tạo đảm bảo đầu ra rõ ràng.
+                    </p>
                 </div>
             </div>
         </div>
-    }
+    </div>
 </div>
+
+<!-- Thêm AOS CSS và JS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Khởi tạo AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-in-out-quad'
+    });
+</script>
+
+<!-- Script bổ sung để tạo hiệu ứng hover cho card (nếu cần) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                card.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.3)";
+            });
+            card.addEventListener('mouseleave', function () {
+                card.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            });
+        });
+    });
+</script>

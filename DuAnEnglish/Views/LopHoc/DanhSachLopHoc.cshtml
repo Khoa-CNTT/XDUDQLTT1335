@@ -1,0 +1,64 @@
+﻿@model List<DuAnEnglish.Models.LopHoc>
+@{
+    if (Session["Role"] != null && Session["Role"].ToString() == "hocvien") // Sửa điều kiện phù hợp với kiểu dữ liệu
+    {
+        Layout = "~/Views/Shared/_LayoutHocVien.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+@{
+    ViewBag.Title = "Danh sách lớp học";
+}
+
+<h2>Danh sách lớp dành cho khóa học: @ViewBag.TenKhoaHoc</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID lớp</th>
+                <th>ID khóa học</th>
+                <th>Tên lớp</th>
+                <th>Lịch học</th>
+                <th>Giờ bắt đầu</th>
+                <th>Giờ kết thúc</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lop in Model)
+            {
+                <tr>
+                    <td>@lop.IDLopHoc</td>
+                    <td>@lop.IDKhoaHoc</td>
+                    <td>@lop.TenLop</td>
+                    <td>@lop.ThuTrongTuan</td>
+                    <td>@DateTime.Today.Add(lop.GioHocBD.Value).ToString("HH:mm")</td>
+                    <td>@DateTime.Today.Add(lop.GioHocKT.Value).ToString("HH:mm")</td>
+                    <td>
+                        <a href="@Url.Action("DangKyKhoaHoc", "KhoaHoc", new { id = lop.IDKhoaHoc, lopId = lop.IDLopHoc })">Đăng ký</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        Hiện tại chưa có lớp học nào được mở cho khóa học này.
+    </div>
+}
+
+<script src="~/Scripts/JSThongBao.js"></script>
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+            // Gọi hàm showAlert từ file JSThongBao.js
+            showAlert('@Html.Raw(ViewBag.ThongBao)');
+    </script>
+}

@@ -17,7 +17,6 @@ namespace DuAnEnglish.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GiangVien()
         {
-            this.DanhGias = new HashSet<DanhGia>();
             this.LopHocs = new HashSet<LopHoc>();
         }
     
@@ -30,8 +29,6 @@ namespace DuAnEnglish.Models
         public string ChuyenMon { get; set; }
         public string BangCap { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DanhGia> DanhGias { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHoc> LopHocs { get; set; }

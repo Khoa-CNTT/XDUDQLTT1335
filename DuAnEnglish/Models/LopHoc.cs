@@ -18,24 +18,30 @@ namespace DuAnEnglish.Models
         public LopHoc()
         {
             this.HocVienLopHocs = new HashSet<HocVienLopHoc>();
-            this.LichHocs = new HashSet<LichHoc>();
+            this.ThanhToans = new HashSet<ThanhToan>();
+            this.ThongBaos = new HashSet<ThongBao>();
         }
     
-        public int IDLopHoc { get; set; }
+        public string IDLopHoc { get; set; }
         public Nullable<int> IDPhongHoc { get; set; }
         public string IDKhoaHoc { get; set; }
         public Nullable<int> IDGiangVien { get; set; }
         public string TenLop { get; set; }
         public Nullable<System.DateTime> NgayBatDau { get; set; }
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
-        public string TrangThai { get; set; }
+        public Nullable<int> Slot { get; set; }
+        public string ThuTrongTuan { get; set; }
+        public Nullable<System.TimeSpan> GioHocBD { get; set; }
+        public Nullable<System.TimeSpan> GioHocKT { get; set; }
     
         public virtual GiangVien GiangVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HocVienLopHoc> HocVienLopHocs { get; set; }
         public virtual KhoaHoc KhoaHoc { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LichHoc> LichHocs { get; set; }
         public virtual PhongHoc PhongHoc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThanhToan> ThanhToans { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThongBao> ThongBaos { get; set; }
     }
 }

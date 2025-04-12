@@ -20,31 +20,34 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Navbar -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-[#ce3235] shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="@Url.Action("Index", "Home")" class="flex items-center space-x-2">
-                <h2 class="text-3xl font-bold tracking-wide text-gray-800">ENGLISH FIVESTARS</h2>
-                @* <img src="~/Images/logo.png" alt="Logo" class="h-10" /> *@
+                <h2 class="text-3xl font-bold tracking-wide text-white">FIVESTARS</h2>
             </a>
 
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="@Url.Action("Index", "Home")" class="hover:text-gray-600">Trang Chủ</a>
-                <a href="@Url.Action("KhoaHoc", "KhoaHoc")" class="hover:text-gray-600">Khóa học</a>
-                <a href="@Url.Action("ChiaSe", "Home")" class="hover:text-gray-600">Chia sẻ</a>
-                <a href="@Url.Action("SuKien", "Home")" class="hover:text-gray-600">Sự kiện</a>
-                <a href="@Url.Action("LienHe", "Home")" class="hover:text-gray-600">Liên hệ</a>
-                <a href="@Url.Action("TuyenDung", "Home")" class="hover:text-gray-600">Tuyển dụng</a>
+                <a href="@Url.Action("Index", "Home")" class="text-white hover:text-gray-200">TRANG CHỦ</a>
+                <a href="@Url.Action("KhoaHoc", "KhoaHoc")" class="text-white hover:text-gray-200">KHÓA HỌC</a>
+                <a href="@Url.Action("ChiaSe", "Home")" class="text-white hover:text-gray-200">CHIA SẺ</a>
+                <a href="@Url.Action("SuKien", "Home")" class="text-white hover:text-gray-200">SỰ KIỆN</a>
+                <a href="@Url.Action("LienHe", "Home")" class="text-white hover:text-gray-200">LIÊN HỆ</a>
+                <a href="@Url.Action("TuyenDung", "Home")" class="text-white hover:text-gray-200">TUYỂN DỤNG</a>
             </nav>
 
             <!-- Buttons -->
             <div class="flex space-x-2">
                 <a href="@Url.Action("DangNhap", "DangNhap")">
-                    <button class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">Đăng nhập</button>
+                    <button class="px-4 py-2 bg-white text-[#ce3235] rounded-lg hover:bg-gray-100 transition">
+                        Đăng nhập
+                    </button>
                 </a>
                 <a href="@Url.Action("DangKy", "DangKy")">
-                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">Đăng ký</button>
+                    <button class="px-4 py-2 bg-white text-[#ce3235] rounded-lg hover:bg-gray-100 transition">
+                        Đăng ký
+                    </button>
                 </a>
             </div>
         </div>
@@ -56,8 +59,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 py-4 text-center text-sm text-gray-500">
+    <footer class="bg-[#ce3235] border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4 text-center text-sm text-white">
             &copy; @DateTime.Now.Year - NHÓM 8 - DTU
         </div>
     </footer>
