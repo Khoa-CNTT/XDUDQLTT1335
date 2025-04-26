@@ -188,7 +188,6 @@
           <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
           <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
           <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
-          <ScalarProperty Name="SoKhoaHoc" ColumnName="SoKhoaHoc" />
           <ScalarProperty Name="SoTien" ColumnName="SoTien" />
           <ScalarProperty Name="PhuongThucTT" ColumnName="PhuongThucTT" />
           <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />

@@ -181,7 +181,6 @@
           <Property Name="IDLopHoc" Type="nvarchar" MaxLength="50" />
           <Property Name="TenDangNhap" Type="varchar" MaxLength="50" />
           <Property Name="IDKhoaHoc" Type="nvarchar" MaxLength="50" />
-          <Property Name="SoKhoaHoc" Type="int" />
           <Property Name="SoTien" Type="decimal" Precision="18" Scale="0" />
           <Property Name="PhuongThucTT" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayThanhToan" Type="datetime" />
@@ -756,7 +755,6 @@
           <Property Name="IDLopHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IDKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SoKhoaHoc" Type="Int32" />
           <Property Name="SoTien" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="PhuongThucTT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayThanhToan" Type="DateTime" Precision="3" />
@@ -1317,7 +1315,6 @@
                 <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
                 <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
                 <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
-                <ScalarProperty Name="SoKhoaHoc" ColumnName="SoKhoaHoc" />
                 <ScalarProperty Name="SoTien" ColumnName="SoTien" />
                 <ScalarProperty Name="PhuongThucTT" ColumnName="PhuongThucTT" />
                 <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />

@@ -12,7 +12,10 @@
 @{
     ViewBag.Title = "Danh sách lớp học";
 }
-
+<meta charset="UTF-8" />
+<!-- SweetAlert2 -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 <h2>Danh sách lớp dành cho khóa học: @ViewBag.TenKhoaHoc</h2>
 
 @if (Model != null && Model.Any())
@@ -26,7 +29,7 @@
                 <th>Lịch học</th>
                 <th>Giờ bắt đầu</th>
                 <th>Giờ kết thúc</th>
-                <th></th>
+                <th>Slot</th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +42,7 @@
                     <td>@lop.ThuTrongTuan</td>
                     <td>@DateTime.Today.Add(lop.GioHocBD.Value).ToString("HH:mm")</td>
                     <td>@DateTime.Today.Add(lop.GioHocKT.Value).ToString("HH:mm")</td>
+                    <td>@lop.Slot</td>
                     <td>
                         <a href="@Url.Action("DangKyKhoaHoc", "KhoaHoc", new { id = lop.IDKhoaHoc, lopId = lop.IDLopHoc })">Đăng ký</a>
                     </td>
@@ -55,10 +59,30 @@ else
 }
 
 <script src="~/Scripts/JSThongBao.js"></script>
-@if (ViewBag.ThongBao != null)
+@*@if (ViewBag.ThongBao != null)
 {
     <script>
-            // Gọi hàm showAlert từ file JSThongBao.js
-            showAlert('@Html.Raw(ViewBag.ThongBao)');
+        var thongBao = '@ViewBag.ThongBao';
+        var decodedThongBao = document.createElement("textarea");
+        decodedThongBao.innerHTML = thongBao;
+        showAlert(decodedThongBao.value); // Hiển thị thông báo sau khi giải mã
     </script>
-}
+}*@
+
+@*@if (ViewBag.ThongBao != null)
+{
+    <script>
+        var thongBao = '@Html.Raw(HttpUtility.HtmlDecode(ViewBag.ThongBao))';
+        showAlert(thongBao); // Gọi hàm showAlert để hiển thị thông báo
+    </script>
+}*@
+
+@if (ViewBag.ThongBao != null)
+    {
+        <script>
+
+                // Gọi hàm showAlert từ file JSThongBao.js
+                showAlert('@Html.Raw(ViewBag.ThongBao)');
+        </script>
+    }
+

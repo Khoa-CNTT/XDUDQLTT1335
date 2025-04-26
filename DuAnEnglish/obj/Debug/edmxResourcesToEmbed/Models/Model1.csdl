@@ -209,7 +209,6 @@
     <Property Name="IDLopHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IDKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SoKhoaHoc" Type="Int32" />
     <Property Name="SoTien" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="PhuongThucTT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NgayThanhToan" Type="DateTime" Precision="3" />

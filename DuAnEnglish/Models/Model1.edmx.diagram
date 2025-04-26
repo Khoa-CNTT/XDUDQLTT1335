@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bdba9afcd3da4f29882887c0889ac6a3" Name="Diagram1">
+      <Diagram DiagramId="1709cd256b1940958ed7e047acf4df13" Name="Diagram1">
         <EntityTypeShape EntityType="trungtamtienganhModel.ChatBotNoiDung" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.DanhGia" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.DiemIELT" Width="1.5" PointX="12" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.DiemTOEIC" Width="1.5" PointX="12" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.GiangVien" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.GiaoDichVNPAY" Width="1.5" PointX="12" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.HocVien" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.DanhGia" Width="1.5" PointX="7.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.DiemIELT" Width="1.5" PointX="12" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.DiemTOEIC" Width="1.5" PointX="12" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.GiangVien" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.GiaoDichVNPAY" Width="1.5" PointX="12" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.HocVien" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="trungtamtienganhModel.HocVienLopHoc" Width="1.5" PointX="9.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.KhoaHoc" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.LopHoc" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.KhoaHoc" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.LopHoc" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="trungtamtienganhModel.PhongHoc" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="trungtamtienganhModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="trungtamtienganhModel.TaiKhoan" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.TaiLieu" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.TaiLieu" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="trungtamtienganhModel.ThanhToan" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="trungtamtienganhModel.ThongBao" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="trungtamtienganhModel.ThongBao" Width="1.5" PointX="12.75" PointY="8.375" IsExpanded="true" />
         <AssociationConnector Association="trungtamtienganhModel.FK__DanhGia__IDHocVi__656C112C" ManuallyRouted="false" />
         <AssociationConnector Association="trungtamtienganhModel.FK__DanhGia__IDKhoaH__66603565" ManuallyRouted="false" />
         <AssociationConnector Association="trungtamtienganhModel.FK__DiemIELTS__5AEE82B9" ManuallyRouted="false" />
