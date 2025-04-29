@@ -98,6 +98,17 @@
   <ItemGroup>
     <Content Include="Content\_Layout.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\6675327.jpg" />
+    <Content Include="Images\contact_img.png" />
+    <Content Include="Images\giangvien1.jpg" />
+    <Content Include="Images\giangvien2.png" />
+    <Content Include="Images\giangvien3.jpg" />
+    <Content Include="Images\giangvien4.jpg" />
+    <Content Include="Images\giangvien5.jpg" />
+    <Content Include="Images\giangvien6.jpg" />
+    <Content Include="Images\giangvien7.jpg" />
+    <Content Include="Images\giangvien8.jpg" />
+    <Content Include="Images\group-kids-studying-school.jpg" />
     <Content Include="Images\TI_CoBan.jpg" />
     <Content Include="Images\TI_LuyenDe.jpg" />
     <Content Include="Images\TI_Master.jpg" />
@@ -125,6 +136,7 @@
     <Compile Include="Controllers\HomeHocVienController.cs" />
     <Compile Include="Controllers\KhoaHocController.cs" />
     <Compile Include="Controllers\LopHocController.cs" />
+    <Compile Include="Controllers\ThanhToanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,6 +217,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Images\banner.avif" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -226,6 +239,8 @@
     <Content Include="Views\Home\TinTuc.cshtml" />
     <Content Include="Views\LopHoc\DanhSachLopHoc.cshtml" />
     <Content Include="Views\KhoaHoc\DangKyKhoaHoc.cshtml" />
+    <Content Include="Views\ThanhToan\DanhSachHoaDon.cshtml" />
+    <Content Include="Views\ThanhToan\HoaDon.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,87 @@
+﻿@model List<DuAnEnglish.Models.ThanhToan>
+@{
+    Layout = "~/Views/Shared/_LayoutHocVien.cshtml";
+}
+@{
+    ViewBag.Title = "Danh Sách Hóa Đơn";
+}
+<meta charset="UTF-8" />
+<!-- SweetAlert2 -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<h2>Danh Sách Hóa Đơn</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã Hóa Đơn</th>
+                <th>Mã Lớp</th>
+                <th>Mã Khóa Học</th>
+                <th>Số Tiền</th>
+                <th>Trạng Thái</th>
+                <th>Thanh Toán</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IDThanhToan</td>
+                    <td>@item.IDLopHoc</td>
+                    <td>@item.IDKhoaHoc</td>
+                    <td>@(item.SoTien.HasValue ? item.SoTien.Value.ToString("N0") + " VNĐ" : "0 vnđ")</td>
+                    <td>@item.TrangThai</td>
+                    <td>
+                        @if (item.TrangThai == "Chưa thanh toán")
+                        {
+                            <a href="@Url.Action("HoaDon", "ThanhToan", new { id = item.IDThanhToan })" class="btn btn-primary">Thanh Toán</a>
+                        }
+                        else if (item.TrangThai == "Chờ xử lý")
+                        {
+                            <span class="btn btn-success" disabled>Đang xử lý</span>
+                        }
+                        else if (item.TrangThai == "Đã thanh toán")
+                        {
+                            <span class="btn btn-success" disabled>Đã thanh toán</span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.TrangThai == "Chưa thanh toán")
+                        {
+                            <a href="@Url.Action("XoaHoaDon", "ThanhToan", new { id = item.IDThanhToan })" class="btn btn-danger">Xóa</a>
+                        }
+                        else if (item.TrangThai == "Chờ xử lý" || item.TrangThai == "Đã thanh toán")
+                        {
+                            <a href="@Url.Action("XemHoaDon", "ThanhToan", new { id = item.IDThanhToan })" class="btn btn-info">Xem hóa đơn</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        Hiện tại chưa có hóa đơn nào để thanh toán.
+    </div>
+}
+<script src="~/Scripts/JSThongBao.js"></script>
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        // Gọi hàm showAlert từ file JSThongBao.js
+        showAlert('@Html.Raw(ViewBag.ThongBao)');
+    </script>
+}
+
+@if (TempData["ThongBao"] != null)
+{
+    <script>
+        // Gọi hàm showAlert từ file JSThongBao.js
+        showAlert('@Html.Raw(TempData["ThongBao"])');
+    </script>
+}
+

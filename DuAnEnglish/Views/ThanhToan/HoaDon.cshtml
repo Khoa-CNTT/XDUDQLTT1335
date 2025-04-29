@@ -1,0 +1,69 @@
+﻿@model DuAnEnglish.Models.ThanhToan
+
+@{
+    Layout = "~/Views/Shared/_LayoutHocVien.cshtml";
+    ViewBag.Title = "Hóa đơn thanh toán";
+    var ngayThanhToan = DateTime.Now;
+}
+
+<h2 class="mb-4">Thông tin hóa đơn</h2>
+
+@using (Html.BeginForm("HoaDon", "ThanhToan", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Các hidden field cần thiết -->
+    @Html.HiddenFor(m => m.IDThanhToan)
+    <input type="hidden" name="ngayThanhToan" value="@ngayThanhToan.ToString("yyyy-MM-dd HH:mm:ss")" />
+
+    <div class="form-group">
+        <label><strong>Mã Hóa Đơn:</strong></label> @Model.IDThanhToan
+    </div>
+
+    <div class="form-group">
+        <label><strong>Mã Lớp Học:</strong></label> @Model.IDLopHoc
+    </div>
+
+    <div class="form-group">
+        <label><strong>Tên Lớp Học:</strong></label> @ViewBag.TenLop
+    </div>
+
+    <div class="form-group">
+        <label><strong>Mã Khóa Học:</strong></label> @Model.IDKhoaHoc
+    </div>
+
+    <div class="form-group">
+        <label><strong>Tên Khóa Học:</strong></label> @ViewBag.TenKhoaHoc
+    </div>
+
+    <div class="form-group">
+        <label><strong>Tên Học Viên:</strong></label> @ViewBag.TenHocVien
+    </div>
+
+    <div class="form-group">
+        <label><strong>Số tiền:</strong></label> @(Model.SoTien.HasValue ? Model.SoTien.Value.ToString("N0") + " VNĐ" : "0 VNĐ")
+    </div>
+
+    <div class="form-group">
+        <label><strong>Ngày thanh toán:</strong></label>
+        <input type="text" class="form-control" value="@ngayThanhToan.ToString("dd/MM/yyyy HH:mm:ss")" readonly />
+    </div>
+
+    <div class="form-group">
+        <label><strong>Phương thức thanh toán:</strong></label><br />
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="phuongThucTT" value="Thanh toán trực tiếp" id="ttTrucTiep" checked />
+            <label class="form-check-label" for="ttTrucTiep">
+                Thanh toán trực tiếp tại trung tâm
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="phuongThucTT" value="Thanh toán qua VNPAY" id="ttVnpay" />
+            <label class="form-check-label" for="ttVnpay">
+                Thanh toán qua VNPAY
+            </label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Xác nhận thanh toán</button>
+}

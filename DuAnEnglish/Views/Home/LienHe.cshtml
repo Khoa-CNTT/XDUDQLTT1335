@@ -2,70 +2,62 @@
     ViewBag.Title = "LienHe";
 }
 
-<!-- Thanh tiêu đề LIÊN HỆ với đường ngang bên trái và bên phải -->
-<div class="flex items-center">
-    <!-- Thanh ngang bên trái -->
-    <div class="flex-1 h-1 bg-[#ce3235]"></div>
-    <!-- Khối chữ hiển thị tiêu đề -->
-    <span class="bg-[#ce3235] text-white px-4 py-2 font-bold uppercase tracking-widest text-lg mx-4">
+<!-- Tiêu đề LIÊN HỆ với thanh ngang đỏ -->
+<div class="flex items-center justify-center my-10">
+    <p class='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-red-700'></p>
+    <span class="text-[#ce3235] font-semibold text-lg tracking-widest mx-4 uppercase">
         LIÊN HỆ
     </span>
-    <!-- Thanh ngang bên phải -->
-    <div class="flex-1 h-1 bg-[#ce3235]"></div>
+    <p class='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-red-700'></p>
 </div>
 
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Nội dung chính -->
+<div class="flex flex-col md:flex-row justify-center items-start gap-12 px-4 md:px-20 mb-24">
+    <!-- Hình ảnh -->
+    <div class="w-full md:max-w-md">
+        <img src="~/Images/contact_img.png" alt="Contact Image" class="w-full h-auto object-cover rounded-md shadow-md" />
+    </div>
 
-    <!-- Registration Section (Đăng ký tư vấn miễn phí) -->
-    <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">ĐĂNG KÝ TƯ VẤN MIỄN PHÍ</h2>
-            <p class="text-gray-600 mb-6">Hãy để lại thông tin để được<br> FIVESTARS liên hệ tư vấn miễn phí nhé!</p>
-            <div class="space-y-2">
-                <p class="text-gray-600">Hoặc gọi hotline</p>
-                <a href="tel:0931900255" class="text-2xl font-bold text-[#ce3235] hover:text-[#b2262a]">
-                    0931 900 255
-                </a>
-            </div>
-        </div>
+    <!-- Thông tin liên hệ -->
+    <div class="flex flex-col justify-center h-full md:h-[480px] md:justify-center md:items-start gap-4 text-gray-800 max-w-md"
+         data-aos="fade-right"
+         data-aos-delay="100">
+        <!-- Our Store -->
+        <h2 class="text-3xl font-semibold text-[#ce3235]">Our Store</h2>
+        <p class="text-xl text-gray-700 leading-relaxed">
+            123 Đường Trần Hưng Đạo<br />
+            , TX.Điện Bàn, Tỉnh Quảng Nam
+        </p>
+        <p class="text-xl text-gray-700">
+            Tel: (84) 123-456-789<br />
+            Email:
+            <a href="mailto:lienhe@trungtamanhngufivestars.vn"
+               class="text-[#ce3235] hover:underline">lienhe@trungtamanhngufivestars.vn</a>
+        </p>
 
-        <!-- Form đăng ký -->
-        <div class="space-y-6">
-            <!-- Họ và tên -->
-            <div>
-                <label class="block text-gray-700 font-medium mb-2">Họ và tên</label>
-                <input type="text"
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ce3235] focus:border-transparent">
-            </div>
+        <!-- Careers -->
+        <h2 class="text-3xl font-semibold text-[#ce3235] mt-6">Careers at Forever</h2>
+        <p class="text-xl text-gray-700">Lorem ipsum dolor, sit amet adipisicing.</p>
 
-            <!-- Email -->
-            <div>
-                <label class="block text-gray-700 font-medium mb-2">Email</label>
-                <input type="email"
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ce3235] focus:border-transparent">
-            </div>
+        <!-- Button -->
+        <button class="mt-2 border border-[#ce3235] text-[#ce3235] px-6 py-2 text-2xl hover:bg-[#ce3235] hover:text-white transition duration-300">
+            Explore Jobs
+        </button>
+    </div>
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+        <!-- Nút gọi điện -->
+        <a href="tel:0123456789" class="w-[80px] h-[80px] rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:bg-green-600 transition-all">
+            <i class="fas fa-phone text-white text-3xl"></i>
+        </a>
 
-            <!-- Số điện thoại -->
-            <div>
-                <label class="block text-gray-700 font-medium mb-2">Số điện thoại</label>
-                <input type="tel"
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ce3235] focus:border-transparent">
-            </div>
+        <!-- Nút Zalo -->
+        <a href="https://zalo.me/0123456789" target="_blank" class="w-[80px] h-[80px] rounded-full bg-blue-600 flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1200px-Icon_of_Zalo.svg.png" alt="Zalo" class="w-10 h-10">
+        </a>
 
-            <!-- Chọn Khóa Học -->
-            <div>
-                <label class="block text-gray-700 font-medium mb-2">Chọn Khóa Học</label>
-                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ce3235] focus:border-transparent">
-                    <option value="">-- Vui lòng chọn --</option>
-                    <option>TOEIC</option>
-                    <option>IELTS</option>
-                </select>
-            </div>
-
-            <!-- Submit Button -->
-            <button class="w-full bg-[#ce3235] hover:bg-[#b2262a] text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform">
-                ĐĂNG KÝ NGAY
-            </button>
-        </div>
+        <!-- Nút Messenger -->
+        <a href="https://m.me/your-page" target="_blank" class="w-[80px] h-[80px] rounded-full bg-blue-500 flex items-center justify-center shadow-lg hover:bg-blue-600 transition-all">
+            <i class="fab fa-facebook-messenger text-white text-3xl"></i>
+        </a>
     </div>
 </div>

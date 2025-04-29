@@ -1,61 +1,50 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "_LayoutHocVien";
 }
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <!-- SweetAlert2 -->
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-    <link href="~/Content/_Layout.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Tạo liên kết Logo -->
-                <a href="@Url.Action("Index", "HomeHocVien")" class="navbar-brand">
-                    <h3>ENGLISH FIVESTARS</h3>
-                    @*<img src="~/Images/logo.png" alt="Logo" style="height: 40px;" />*@
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Menu -->
-                    <li>@Html.ActionLink("Khóa Học", "KhoaHoc", "KhoaHoc")</li>
-                    <li>@Html.ActionLink("Quản lý thông tin cá nhân", "KhoaHoc", "KhoaHoc")</li> @*Tên tiêu đề - Action - Controller*@
-                    <li>@Html.ActionLink("Thanh toán", "Share", "Home")</li>
-                    <li>@Html.ActionLink("Lịch học", "Events", "Home")</li>
-                    <li>@Html.ActionLink("Điểm", "Contact", "Home")</li>
-                </ul>
-            </div>
-            <!-- Nút Đăng Xuất dưới dạng liên kết -->
-            <a href="@Url.Action("DangXuat", "DangNhap")" class="btn btn-danger">Đăng xuất</a>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <header class="bg-[#ce3235] shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="@Url.Action("Index", "HomeHocVien")" class="flex items-center space-x-2">
+                <h2 class="text-3xl font-bold tracking-wide text-white">FIVESTARS</h2>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="@Url.Action("KhoaHoc", "KhoaHoc")" class="text-white hover:text-gray-200">KHÓA HỌC</a>
+                <a href="@Url.Action("ThongTin", "HocVien")" class="text-white hover:text-gray-200">THÔNG TIN</a>
+                <a href="@Url.Action("DanhSachHoaDon", "ThanhToan")" class="text-white hover:text-gray-200">THANH TOÁN</a>
+                <a href="@Url.Action("LichHoc", "HocVien")" class="text-white hover:text-gray-200">LỊCH HỌC</a>
+                <a href="@Url.Action("Diem", "HocVien")" class="text-white hover:text-gray-200">ĐIỂM</a>
+            </nav>
+
+            <!-- Buttons -->
+            <a href="@Url.Action("DangXuat", "DangNhap")" class="bg-white hover:bg-red-700 text-red-500 px-4 py-2 rounded-md transition-colors">
+                Đăng Xuất
+            </a>
         </div>
-    </div>
+    </header>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - NHOM 8 DTU</p>
-        </footer>
-    </div>
+    <!-- Main Content -->
+    <main class="pt-20 min-h-screen">
+        <div class="container mx-auto px-4 py-8">
+            @RenderBody()
+        </div>
+    </main>
 
+    <!-- Scripts -->
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    @if (TempData["ThongBao"] != null)
-    {
-        <script>
-        showAlert('@TempData["ThongBao"]');
-        </script>
-    }
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
-

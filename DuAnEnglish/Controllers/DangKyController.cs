@@ -20,6 +20,26 @@ namespace DuAnEnglish.Controllers
         [HttpPost]
         public ActionResult DangKy(string TenDangNhap, string MatKhau, string NhapLaiMatKhau, string Email, string SDT, string HoTen)
         {
+            // Kiểm tra độ dài mật khẩu
+            if (MatKhau.Length < 3 || MatKhau.Length > 20)
+            {
+                ViewBag.ThongBao = "Mật khẩu phải có độ dài từ 3 đến 20 ký tự!";
+                return View();
+            }
+
+            // Kiểm tra độ dài tên đăng nhập
+            if (TenDangNhap.Length < 4)
+            {
+                ViewBag.ThongBao = "Tên đăng nhập phải có ít nhất 4 ký tự!";
+                return View();
+            }
+
+            // Kiểm tra độ dài họ tên
+            if (HoTen.Length < 5)
+            {
+                ViewBag.ThongBao = "Họ tên phải có ít nhất 5 ký tự!";
+                return View();
+            }
             // So sánh mật khẩu
             if (MatKhau != NhapLaiMatKhau)
             {

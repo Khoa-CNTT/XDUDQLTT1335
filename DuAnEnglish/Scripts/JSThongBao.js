@@ -1,8 +1,8 @@
 ﻿// Hàm hiển thị thông báo SweetAlert2
 function showAlert(message) {
     Swal.fire({
-        icon: 'error',
-        title: 'Lỗi!',
+        icon: 'info',
+        title: 'Thông báo',
         text: message,
         background: '#ecf0f1',
         confirmButtonColor: '#3085d6',

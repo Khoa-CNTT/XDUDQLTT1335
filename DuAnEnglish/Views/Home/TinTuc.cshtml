@@ -1,7 +1,57 @@
 ﻿
-@{
-    ViewBag.Title = "TinTuc";
-}
+@{ ViewBag.Title = "TinTuc"; }
+<div class="flex items-center justify-center my-10">
+    <div class="h-px bg-[#ce3235] flex-1"></div>
+    <span class="text-[#ce3235] font-semibold text-lg tracking-widest mx-4 uppercase">
+        TIN TỨC
+    </span>
+    <div class="h-px bg-[#ce3235] flex-1"></div>
+</div>
 
-<h2>TinTuc</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-10 py-10 bg-white">
+    <!-- ITEM -->
+    <div class="flex flex-col md:flex-row gap-4 border-b pb-6">
+        <img src="IMAGE_1.jpg" alt="" class="w-full md:w-[180px] h-[120px] object-cover rounded-md">
+        <div class="flex flex-col justify-between">
+            <div>
+                <p class="text-red-600 text-sm font-semibold">Tin tức</p>
+                <h2 class="text-md md:text-lg font-bold text-gray-900 uppercase">
+                    CÔNG BỐ CHỈ TIÊU LỚP 10 CỦA 77 TRƯỜNG TƯ Ở HÀ NỘI
+                </h2>
+                <p class="text-gray-500 text-sm mt-1">77 trường tư ở Hà Nội năm nay tuyển gần 28.000 học sinh... </p>
+            </div>
+            <div class="text-gray-400 text-sm mt-2 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 7V3m8 4V3m-9 8h10m-10 4h6m4 0v5a2 2 0 002 2H5a2 2 0 01-2-2v-5m16 0H3" />
+                </svg>
+                16/04/2025
+            </div>
+        </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="flex flex-col md:flex-row gap-4 border-b pb-6">
+        <img src="IMAGE_2.jpg" alt="" class="w-full md:w-[180px] h-[120px] object-cover rounded-md">
+        <div class="flex flex-col justify-between">
+            <div>
+                <p class="text-red-600 text-sm font-semibold">Tin tức</p>
+                <h2 class="text-md md:text-lg font-bold text-gray-900 uppercase">
+                    CHÀNG GIÁO VIÊN 26 TUỔI ĐẠT 7.5 IELTS CHỈ SAU 1 THÁNG
+                </h2>
+                <p class="text-gray-500 text-sm mt-1">Luyện thi IELTS là hành trình không dễ dàng, đặc biệt với...</p>
+            </div>
+            <div class="text-gray-400 text-sm mt-2 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 7V3m8 4V3m-9 8h10m-10 4h6m4 0v5a2 2 0 002 2H5a2 2 0 01-2-2v-5m16 0H3" />
+                </svg>
+                15/04/2025
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm các bài viết tiếp theo tương tự như trên -->
+</div>
+
 
