@@ -1,0 +1,14 @@
+﻿@{
+    if (Session["Role"] != null)
+    {
+        var role = Session["Role"].ToString().ToLower();
+        if (role == "admin")
+        {
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        }
+        else if (role == "giangvien")
+        {
+            Layout = "~/Views/Shared/_LayoutGiangVien.cshtml";
+        }
+    }
+}

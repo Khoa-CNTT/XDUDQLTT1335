@@ -85,7 +85,7 @@ namespace DuAnEnglish.Controllers
                 Email = Email,
                 SDT = SDT,
                 LoaiTK = "hocvien",
-                TrangThai = "hoạt động"
+                TrangThai = "Hoạt động"
             };
 
             db.TaiKhoans.Add(taiKhoanMoi);
@@ -103,6 +103,7 @@ namespace DuAnEnglish.Controllers
             db.HocViens.Add(hocVienMoi);
             db.SaveChanges();
 
+            TempData["ThongBaoDangNhap"] = "Đăng ký thành công";
             return RedirectToAction("DangNhap", "DangNhap");
         }
     }

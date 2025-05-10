@@ -44,34 +44,34 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach (var item in Model)
         {
-<div class="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-    <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"
-       class="block overflow-hidden rounded-t-xl">
-        <img src="~/Images/@item.HinhAnhKH"
-             alt="@item.TenKhoaHoc"
-             class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
-    </a>
+            <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"
+                   class="block overflow-hidden rounded-t-xl">
+                    <img src="~/Images/@item.HinhAnhKH"
+                         alt="@item.TenKhoaHoc"
+                         class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                </a>
 
-    <div class="p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">@item.TenKhoaHoc</h3>
-        <p class="text-gray-600 mb-4 line-clamp-3">
-            Khóa học được thiết kế với nội dung cập nhật, phù hợp với nhu cầu đào tạo tiếng Anh hiện đại.
-        </p>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">@item.TenKhoaHoc</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                        Khóa học được thiết kế với nội dung cập nhật, phù hợp với nhu cầu đào tạo tiếng Anh hiện đại.
+                    </p>
 
-        <div class="flex items-center justify-between">
-            <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"
-               class="flex items-center text-[#00aab5] font-semibold hover:text-[#008996] transition-colors">
-                Xem chi tiết
-                <i class="fas fa-chevron-right ml-2 text-sm"></i>
-            </a>
-        </div>
-    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="@Url.Action("ChiTietKhoaHoc", "KhoaHoc", new { id = item.IDKhoaHoc })"
+                           class="flex items-center text-[#00aab5] font-semibold hover:text-[#008996] transition-colors">
+                            Xem chi tiết
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Ribbon badge -->
-    <div class="absolute top-4 right-4 bg-[#fcaf17] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
-        Hot
-    </div>
-</div>}
+                <!-- Ribbon badge -->
+                <div class="absolute top-4 right-4 bg-[#fcaf17] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                    Hot
+                </div>
+            </div>}
     </div>
 </div>
 

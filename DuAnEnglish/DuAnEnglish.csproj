@@ -139,13 +139,18 @@
     <Compile Include="Controllers\DangNhapController.cs" />
     <Compile Include="Controllers\DoiMatKhauController.cs" />
     <Compile Include="Controllers\DoiMatKhauGVController.cs" />
+    <Compile Include="Controllers\HocTapController.cs" />
     <Compile Include="Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeGiangVienController.cs" />
     <Compile Include="Controllers\HomeHocVienController.cs" />
     <Compile Include="Controllers\KhoaHocController.cs" />
     <Compile Include="Controllers\LopHocController.cs" />
+    <Compile Include="Controllers\QuanLyPhongHocController.cs" />
+    <Compile Include="Controllers\QuanLyThongBaoGVController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
+    <Compile Include="Controllers\ThongTinGiangVienController.cs" />
+    <Compile Include="Controllers\ThongTinHocVienController.cs" />
     <Compile Include="Controllers\XemThongBaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -249,6 +254,18 @@
     <Content Include="Views\XemThongBao\DanhSachThongBao.cshtml" />
     <Content Include="Views\DoiMatKhau\Doimatkhau.cshtml" />
     <Content Include="Views\DoiMatKhauGV\DoiMatKhauGV.cshtml" />
+    <Content Include="Views\HocTap\XemLop.cshtml" />
+    <Content Include="Views\HocTap\XemDiemTOEIC.cshtml" />
+    <Content Include="Views\HocTap\XemDiemIELTS.cshtml" />
+    <Content Include="Views\QuanLyPhongHoc\QuanLyPhongHoc.cshtml" />
+    <Content Include="Views\QuanLyPhongHoc\Them.cshtml" />
+    <Content Include="Views\QuanLyPhongHoc\Xem.cshtml" />
+    <Content Include="Views\QuanLyThongBaoGV\QuanLyThongBaoGV.cshtml" />
+    <Content Include="Views\QuanLyThongBaoGV\Them.cshtml" />
+    <Content Include="Views\QuanLyThongBaoGV\Xem.cshtml" />
+    <Content Include="Views\ThongTinGiangVien\ThongTinGiangVien.cshtml" />
+    <Content Include="Views\ThongTinHocVien\ThongTinHocVien.cshtml" />
+    <Content Include="Views\ThanhToan\XemHoaDon.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
