@@ -150,3 +150,7 @@ D:\XDUDQLTT1335\DuAnEnglish\obj\Debug\DuAnEnglish.csproj.CoreCompileInputs.cache
 D:\XDUDQLTT1335\DuAnEnglish\obj\Debug\DuAnEnglish.csproj.CopyComplete
 D:\XDUDQLTT1335\DuAnEnglish\obj\Debug\DuAnEnglish.dll
 D:\XDUDQLTT1335\DuAnEnglish\obj\Debug\DuAnEnglish.pdb
+D:\XDUDQLTT1335\DuAnEnglish\bin\PagedList.dll
+D:\XDUDQLTT1335\DuAnEnglish\bin\PagedList.Mvc.dll
+D:\XDUDQLTT1335\DuAnEnglish\bin\PagedList.xml
+D:\XDUDQLTT1335\DuAnEnglish\bin\PagedList.Mvc.xml

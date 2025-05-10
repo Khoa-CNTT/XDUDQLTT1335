@@ -19,7 +19,6 @@ namespace DuAnEnglish.Models
         {
             this.HocVienLopHocs = new HashSet<HocVienLopHoc>();
             this.ThanhToans = new HashSet<ThanhToan>();
-            this.ThongBaos = new HashSet<ThongBao>();
         }
     
         public string IDLopHoc { get; set; }
@@ -41,7 +40,5 @@ namespace DuAnEnglish.Models
         public virtual PhongHoc PhongHoc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThanhToan> ThanhToans { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongBao> ThongBaos { get; set; }
     }
 }

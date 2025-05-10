@@ -26,7 +26,6 @@ namespace DuAnEnglish.Models
         }
     
         public virtual DbSet<ChatBotNoiDung> ChatBotNoiDungs { get; set; }
-        public virtual DbSet<DanhGia> DanhGias { get; set; }
         public virtual DbSet<DiemIELT> DiemIELTS { get; set; }
         public virtual DbSet<DiemTOEIC> DiemTOEICs { get; set; }
         public virtual DbSet<GiangVien> GiangViens { get; set; }
@@ -39,7 +38,6 @@ namespace DuAnEnglish.Models
         public virtual DbSet<PhongHoc> PhongHocs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<TaiLieu> TaiLieux { get; set; }
         public virtual DbSet<ThanhToan> ThanhToans { get; set; }
         public virtual DbSet<ThongBao> ThongBaos { get; set; }
     }

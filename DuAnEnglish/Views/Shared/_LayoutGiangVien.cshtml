@@ -1,50 +1,51 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+    ViewBag.Title = "_LayoutHocVien";
+}
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/_Layout.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Tạo liên kết Logo -->
-                <a href="@Url.Action("Index", "HomeGiangVien")" class="navbar-brand">
-                    <h3>ENGLISH FIVESTARS</h3>
-                    @*<img src="~/Images/logo.png" alt="Logo" style="height: 40px;" />*@
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Menu -->
-                    <li>@Html.ActionLink("Quản lý học viên", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Quản lý tài liệu", "KhoaHoc", "KhoaHoc")</li> @*Tên tiêu đề - Action - Controller*@
-                    <li>@Html.ActionLink("Quản lý phòng học", "Share", "Home")</li>
-                    <li>@Html.ActionLink("Kết quả học tập", "Events", "Home")</li>
-                    <li>@Html.ActionLink("Đánh giá học viên", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Gửi thông báo", "Contact", "Home")</li>
-                </ul>
-            </div>
-            <!-- Nút Đăng Xuất dưới dạng liên kết -->
-            <a href="@Url.Action("DangXuat", "DangNhap")" class="btn btn-danger">Đăng xuất</a>
-        </div>
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Sidebar cố định -->
+        <aside class="fixed top-0 left-0 h-full w-64 bg-[#ce3235] p-6 text-white flex flex-col space-y-6">
+            <!-- Logo -->
+            <a href="@Url.Action("Index", "HomeGiangVien")" class="flex items-center space-x-2">
+                <h2 class="text-3xl font-bold tracking-wide text-white">MY TEACHER</h2>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col space-y-4 text-sm font-medium">
+                <a href="@Url.Action("ThongTinGiangVien", "ThongTinGiangVien")" class="hover:text-gray-200">THÔNG TIN CÁ NHÂN</a>
+                <a href="@Url.Action("DoiMatKhauGV", "DoiMatKhauGV")" class="hover:text-gray-200">ĐỔI MẬT KHẨU</a>
+                <a href="@Url.Action("QuanLyHocVien", "QuanLyHocVien")" class="hover:text-gray-200">HỌC VIÊN</a>
+                <a href="@Url.Action("QuanLyLophoc", "QuanLyLophoc")" class="hover:text-gray-200">LỚP HỌC</a>
+                <a href="@Url.Action("QuanLyDiemSo", "QuanLyDiemSo")" class="hover:text-gray-200">ĐIỂM SỐ</a>
+                <a href="@Url.Action("QuanLyThongBaoGV", "QuanLyThongBaoGV")" class="hover:text-gray-200">THÔNG BÁO</a>
+                <a href="@Url.Action("QuanLyPhongHoc", "QuanLyPhongHoc")" class="hover:text-gray-200">PHÒNG HỌC</a>
+            </nav>
+
+            <!-- Logout -->
+            <a href="@Url.Action("DangXuat", "DangNhap")"
+               class="mt-auto text-center bg-white text-red-600 font-semibold py-2 rounded-md transition-colors duration-300 hover:bg-gray-800 hover:text-white">
+                Đăng Xuất
+            </a>
+        </aside>
+
+        <!-- Nội dung trang - đẩy sang phải để không bị sidebar đè lên -->
+        <main class="ml-64 flex-1 p-6">
+            @RenderBody()
+        </main>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - NHOM 8 DTU</p>
-        </footer>
-    </div>
-
+    <!-- Scripts -->
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
+
 </html>
-
-

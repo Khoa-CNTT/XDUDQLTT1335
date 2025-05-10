@@ -21,7 +21,6 @@ namespace DuAnEnglish.Models
             this.HocViens = new HashSet<HocVien>();
             this.ThanhToans = new HashSet<ThanhToan>();
             this.ThongBaos = new HashSet<ThongBao>();
-            this.ThongBaos1 = new HashSet<ThongBao>();
         }
     
         public string TenDangNhap { get; set; }
@@ -40,7 +39,5 @@ namespace DuAnEnglish.Models
         public virtual ICollection<ThanhToan> ThanhToans { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThongBao> ThongBaos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongBao> ThongBaos1 { get; set; }
     }
 }

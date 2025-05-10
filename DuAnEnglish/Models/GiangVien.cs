@@ -26,8 +26,6 @@ namespace DuAnEnglish.Models
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string GioiTinh { get; set; }
         public string DiaChi { get; set; }
-        public string ChuyenMon { get; set; }
-        public string BangCap { get; set; }
     
         public virtual TaiKhoan TaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

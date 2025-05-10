@@ -28,6 +28,7 @@ namespace DuAnEnglish.Models
         public string PhuongThucTT { get; set; }
         public Nullable<System.DateTime> NgayThanhToan { get; set; }
         public string TrangThai { get; set; }
+        public Nullable<System.DateTime> NgayXacNhan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GiaoDichVNPAY> GiaoDichVNPAYs { get; set; }

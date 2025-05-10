@@ -11,17 +11,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DanhGias">
-      <EntityTypeMapping TypeName="trungtamtienganhModel.DanhGia">
-        <MappingFragment StoreEntitySet="DanhGia">
-          <ScalarProperty Name="IDDanhGia" ColumnName="IDDanhGia" />
-          <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
-          <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
-          <ScalarProperty Name="NhanXet" ColumnName="NhanXet" />
-          <ScalarProperty Name="NgayDanhGia" ColumnName="NgayDanhGia" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DiemIELTS">
       <EntityTypeMapping TypeName="trungtamtienganhModel.DiemIELT">
         <MappingFragment StoreEntitySet="DiemIELTS">
@@ -64,8 +53,6 @@
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="ChuyenMon" ColumnName="ChuyenMon" />
-          <ScalarProperty Name="BangCap" ColumnName="BangCap" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -171,16 +158,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TaiLieux">
-      <EntityTypeMapping TypeName="trungtamtienganhModel.TaiLieu">
-        <MappingFragment StoreEntitySet="TaiLieu">
-          <ScalarProperty Name="IDTaiLieu" ColumnName="IDTaiLieu" />
-          <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
-          <ScalarProperty Name="TenTaiLieu" ColumnName="TenTaiLieu" />
-          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ThanhToans">
       <EntityTypeMapping TypeName="trungtamtienganhModel.ThanhToan">
         <MappingFragment StoreEntitySet="ThanhToan">
@@ -192,6 +169,7 @@
           <ScalarProperty Name="PhuongThucTT" ColumnName="PhuongThucTT" />
           <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="NgayXacNhan" ColumnName="NgayXacNhan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -200,8 +178,6 @@
         <MappingFragment StoreEntitySet="ThongBao">
           <ScalarProperty Name="IDThongBao" ColumnName="IDThongBao" />
           <ScalarProperty Name="IDNguoiGui" ColumnName="IDNguoiGui" />
-          <ScalarProperty Name="IDNguoiNhan" ColumnName="IDNguoiNhan" />
-          <ScalarProperty Name="IDLopHoc" ColumnName="IDLopHoc" />
           <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="NgayGui" ColumnName="NgayGui" />

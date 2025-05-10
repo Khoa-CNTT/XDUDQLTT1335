@@ -11,40 +11,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-gray-50">
-
-    <!-- Navbar -->
-    <header class="bg-[#ce3235] shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex">
+        <!-- Sidebar cố định -->
+        <aside class="fixed top-0 left-0 h-full w-64 bg-[#ce3235] p-6 text-white flex flex-col space-y-6">
             <!-- Logo -->
             <a href="@Url.Action("Index", "HomeHocVien")" class="flex items-center space-x-2">
-                <h2 class="text-3xl font-bold tracking-wide text-white">FIVESTARS</h2>
+                <h2 class="text-3xl font-bold tracking-wide text-white">MY STUDENT</h2>
             </a>
 
             <!-- Navigation -->
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="@Url.Action("KhoaHoc", "KhoaHoc")" class="text-white hover:text-gray-200">KHÓA HỌC</a>
-                <a href="@Url.Action("ThongTin", "HocVien")" class="text-white hover:text-gray-200">THÔNG TIN</a>
-                <a href="@Url.Action("DanhSachHoaDon", "ThanhToan")" class="text-white hover:text-gray-200">THANH TOÁN</a>
-                <a href="@Url.Action("LichHoc", "HocVien")" class="text-white hover:text-gray-200">LỊCH HỌC</a>
-                <a href="@Url.Action("Diem", "HocVien")" class="text-white hover:text-gray-200">ĐIỂM</a>
+            <nav class="flex flex-col space-y-4 text-sm font-medium">
+                <a href="@Url.Action("KhoaHoc", "KhoaHoc")" class="hover:text-gray-200">XEM CÁC KHÓA HỌC</a>
+                <a href="@Url.Action("ThongTinHocVien", "ThongTinHocVien")" class="hover:text-gray-200">THÔNG TIN CÁ NHÂN</a>
+                <a href="@Url.Action("DanhSachHoaDon", "ThanhToan")" class="hover:text-gray-200">THANH TOÁN</a>
+                <a href="@Url.Action("XemLop", "HocTap")" class="hover:text-gray-200">HỌC TẬP</a>
+                <a href="@Url.Action("DanhSachThongBao", "XemThongBao")" class="hover:text-gray-200">THÔNG BÁO</a>
+                <a href="@Url.Action("Doimatkhau", "DoiMatKhau")" class="hover:text-gray-200">ĐỔI MẬT KHẨU</a>
             </nav>
 
-            <!-- Buttons -->
-            <a href="@Url.Action("DangXuat", "DangNhap")" class="bg-white hover:bg-red-700 text-red-500 px-4 py-2 rounded-md transition-colors">
+            <!-- Logout -->
+            <a href="@Url.Action("DangXuat", "DangNhap")"
+               class="mt-auto text-center bg-white text-red-600 font-semibold py-2 rounded-md transition-colors duration-300 hover:bg-gray-800 hover:text-white">
                 Đăng Xuất
             </a>
-        </div>
-    </header>
+        </aside>
 
-    <!-- Main Content -->
-    <main class="pt-20 min-h-screen">
-        <div class="container mx-auto px-4 py-8">
+        <!-- Nội dung trang - đẩy sang phải để không bị sidebar đè lên -->
+        <main class="ml-64 flex-1 p-6">
             @RenderBody()
-        </div>
-    </main>
+        </main>
+    </div>
 
     <!-- Scripts -->
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>
