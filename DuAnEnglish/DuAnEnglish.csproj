@@ -131,6 +131,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\JSThongBao.js" />
+    <Content Include="Scripts\JSXacNhanXoa.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

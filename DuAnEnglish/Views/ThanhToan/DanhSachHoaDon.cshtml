@@ -60,7 +60,7 @@
                                 @if (item.TrangThai == "Chưa thanh toán")
                                 {
                                     <a href="@Url.Action("XoaHoaDon", "ThanhToan", new { id = item.IDThanhToan })"
-                                       class="inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600
+                                       class="btn-xoa inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600
                                     bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-1000 ease-out
                                     text-white shadow-md">
                                         Xóa hóa đơn
@@ -91,6 +91,7 @@
 </div>
 
 <script src="~/Scripts/JSThongBao.js"></script>
+<script src="~/Scripts/JSXacNhanXoa.js"></script>
 @if (ViewBag.ThongBao != null)
 {
     <script>

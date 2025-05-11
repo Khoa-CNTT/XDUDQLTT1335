@@ -20,25 +20,25 @@
 
 @*<h2>Danh sách Phòng Học</h2>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Mã Phòng Học</th>
-            <th>Tên Phòng Học</th>
-            <th>Sức Chứa</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var phong in Model)
-        {
+    <table class="table table-bordered table-striped">
+        <thead>
             <tr>
-                <td>@phong.IDPhongHoc</td>
-                <td>@phong.TenPhong</td>
-                <td>@phong.SucChua</td>
+                <th>Mã Phòng Học</th>
+                <th>Tên Phòng Học</th>
+                <th>Sức Chứa</th>
             </tr>
-        }
-    </tbody>
-</table>*@
+        </thead>
+        <tbody>
+            @foreach (var phong in Model)
+            {
+                <tr>
+                    <td>@phong.IDPhongHoc</td>
+                    <td>@phong.TenPhong</td>
+                    <td>@phong.SucChua</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100">
     <div class="bg-white p-10 rounded-2xl shadow-lg w-full max-w-6xl">
@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                     @foreach (var phong in Model)
-                    {                     
+                    {
                         <tr class="hover:bg-gray-100">
                             <td class="py-3 px-4 border">@phong.IDPhongHoc</td>
                             <td class="py-3 px-4 border">@phong.TenPhong</td>
@@ -83,7 +83,7 @@
                             </td>
                             <td class="py-3 px-4 border">
                                 <a href="@Url.Action("Xoa", "QuanLyPhongHoc", new { id = phong.IDPhongHoc })"
-                                   class="inline-block py-2 px-4 text-sm font-medium rounded-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600
+                                   class="btn-xoa inline-block py-2 px-4 text-sm font-medium rounded-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600
                                           bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-1000 ease-out
                                           text-white shadow">
                                     Xóa
@@ -92,12 +92,13 @@
                         </tr>
                     }
                 </tbody>
-            </table>         
+            </table>
         }
     </div>
 </div>
 
 <script src="~/Scripts/JSThongBao.js"></script>
+<script src="~/Scripts/JSXacNhanXoa.js"></script>
 @if (ViewBag.ThongBao != null)
 {
     <script>
@@ -105,3 +106,30 @@
             showAlert('@Html.Raw(ViewBag.ThongBao)');
     </script>
 }
+@*<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".btn-xoa");
+
+        deleteButtons.forEach(function (button) {
+            button.addEventListener("click", function (e) {
+                e.preventDefault(); // chặn chuyển hướng mặc định
+                const url = this.getAttribute("href");
+
+                Swal.fire({
+                    title: 'Bạn có chắc chắn muốn xóa?',
+                    text: "Hành động này không thể hoàn tác!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Xóa!',
+                    cancelButtonText: 'Hủy'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    });
+</script>*@

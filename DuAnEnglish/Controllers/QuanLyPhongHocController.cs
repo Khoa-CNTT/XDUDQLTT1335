@@ -46,9 +46,9 @@ namespace DuAnEnglish.Controllers
                 }
 
                 // Kiểm tra sức chứa hợp lệ
-                if (phongHoc.SucChua < 0 || phongHoc.SucChua > 20)
+                if (phongHoc.SucChua < 1 || phongHoc.SucChua > 20)
                 {
-                    ViewBag.ThongBao = "Sức chứa phải lớn hơn hoặc bằng 0 và nhỏ hơn hoặc bằng 20.";
+                    ViewBag.ThongBao = "Sức chứa phải lớn hơn 0 và nhỏ hơn hoặc bằng 20.";
                     return View();
                 }
 
@@ -61,6 +61,60 @@ namespace DuAnEnglish.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult Xem(int id)
+        {
+            string tenDangNhap = Session["User"] as string;
+            if (string.IsNullOrEmpty(tenDangNhap))
+            {
+                TempData["ThongBaoDangNhap"] = "Bạn cần đăng nhập";
+                return RedirectToAction("DangNhap", "DangNhap");
+            }
+
+            var phonghoc = db.PhongHocs.FirstOrDefault(p => p.IDPhongHoc == id);
+            if (phonghoc == null)
+            {
+                TempData["ThongBao"] = "Phòng học không tồn tại";
+                return RedirectToAction("QuanLyPhongHoc");
+            }
+
+            return View(phonghoc); // Truyền model vào view
+        }
+        [HttpPost]
+        public ActionResult CapNhat(PhongHoc phongHoc)
+        {
+            if (string.IsNullOrWhiteSpace(phongHoc.TenPhong))
+            {
+                ViewBag.ThongBao = "Vui lòng nhập tên phòng học.";
+                return View("Xem", phongHoc);
+            }
+
+            if (phongHoc.SucChua < 1 || phongHoc.SucChua > 20)
+            {
+                ViewBag.ThongBao = "Sức chứa phải từ 1 đến 20.";
+                return View("Xem", phongHoc);
+            }
+            if (ModelState.IsValid)
+            {
+                var existing = db.PhongHocs.FirstOrDefault(p => p.IDPhongHoc == phongHoc.IDPhongHoc);
+                if (existing != null)
+                {
+                    existing.TenPhong = phongHoc.TenPhong;
+                    existing.SucChua = phongHoc.SucChua;
+                    db.SaveChanges();
+                    TempData["ThongBao"] = "Cập nhật phòng học thành công!";
+                    return RedirectToAction("QuanLyPhongHoc");
+                }
+                else
+                {
+                    ViewBag.ThongBao = "Không tìm thấy phòng học.";
+                    return View("Xem", phongHoc);
+                }
+            }
+
+            ViewBag.ThongBao = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.";
+            return View("Xem", phongHoc);
         }
 
         public ActionResult xoa(int id)
@@ -77,15 +131,27 @@ namespace DuAnEnglish.Controllers
 
             if (phonghoc == null)
             {
-                TempData["ThongBao"] = "Thông báo không tồn tại";
+                TempData["ThongBao"] = "Phòng học không tồn tại";
                 return RedirectToAction("QuanLyPhongHoc");
             }
 
+            // Tìm tất cả lớp học đang dùng phòng này và set IDPhongHoc = null
+            var lopHocsLienQuan = db.LopHocs.Where(lh => lh.IDPhongHoc == id).ToList();
+            foreach (var lop in lopHocsLienQuan)
+            {
+                lop.IDPhongHoc = null;
+            }
+
+            // Lưu thay đổi cập nhật khóa ngoại
+            db.SaveChanges();
+
+            // Sau đó mới xóa phòng học
             db.PhongHocs.Remove(phonghoc);
             db.SaveChanges();
 
             TempData["ThongBao"] = "Xóa phòng học thành công";
             return RedirectToAction("QuanLyPhongHoc");
         }
+
     }
 }

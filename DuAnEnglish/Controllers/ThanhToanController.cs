@@ -152,7 +152,7 @@ namespace DuAnEnglish.Controllers
                 //return Redirect(vnpayPaymentUrl);
             }
 
-            ViewBag.ThongBao = "Phương thức thanh toán không hợp lệ.";
+            ViewBag.ThongBao = "Thanh toán không thành công.";
             return RedirectToAction("DanhSachHoaDon");
         }
 
