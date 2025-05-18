@@ -53,6 +53,8 @@
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="ChuyenMon" ColumnName="ChuyenMon" />
+          <ScalarProperty Name="BangCap" ColumnName="BangCap" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -117,8 +119,6 @@
           <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
           <ScalarProperty Name="IDGiangVien" ColumnName="IDGiangVien" />
           <ScalarProperty Name="TenLop" ColumnName="TenLop" />
-          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
-          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
           <ScalarProperty Name="Slot" ColumnName="Slot" />
           <ScalarProperty Name="ThuTrongTuan" ColumnName="ThuTrongTuan" />
           <ScalarProperty Name="GioHocBD" ColumnName="GioHocBD" />

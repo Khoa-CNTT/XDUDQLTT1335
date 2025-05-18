@@ -52,6 +52,8 @@
     <Property Name="NgaySinh" Type="date" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="ChuyenMon" Type="nvarchar(max)" />
+    <Property Name="BangCap" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="GiaoDichVNPAY">
     <Key>
@@ -111,8 +113,6 @@
     <Property Name="IDKhoaHoc" Type="nvarchar" MaxLength="50" />
     <Property Name="IDGiangVien" Type="int" />
     <Property Name="TenLop" Type="varchar" MaxLength="100" />
-    <Property Name="NgayBatDau" Type="date" />
-    <Property Name="NgayKetThuc" Type="date" />
     <Property Name="Slot" Type="int" />
     <Property Name="ThuTrongTuan" Type="nvarchar" MaxLength="50" />
     <Property Name="GioHocBD" Type="time" Precision="7" />

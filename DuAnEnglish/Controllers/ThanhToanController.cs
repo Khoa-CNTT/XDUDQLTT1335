@@ -156,42 +156,42 @@ namespace DuAnEnglish.Controllers
             return RedirectToAction("DanhSachHoaDon");
         }
 
-        public ActionResult XemHoaDon(int id)
-        {
-            if (Session["User"] == null)
-            {
-                TempData["ThongBaoDangNhap"] = "Bạn cần đăng nhập để xem hóa đơn.";
-                return RedirectToAction("DangNhap", "DangNhap");
-            }
+        //public ActionResult XemHoaDon(int id)
+        //{
+        //    if (Session["User"] == null)
+        //    {
+        //        TempData["ThongBaoDangNhap"] = "Bạn cần đăng nhập để xem hóa đơn.";
+        //        return RedirectToAction("DangNhap", "DangNhap");
+        //    }
 
-            var hoaDon = db.ThanhToans.FirstOrDefault(h => h.IDThanhToan == id);
-            if (hoaDon == null)
-            {
-                TempData["ThongBao"] = "Không tìm thấy hóa đơn.";
-                return RedirectToAction("DanhSachHoaDon");
-            }
+        //    var hoaDon = db.ThanhToans.FirstOrDefault(h => h.IDThanhToan == id);
+        //    if (hoaDon == null)
+        //    {
+        //        TempData["ThongBao"] = "Không tìm thấy hóa đơn.";
+        //        return RedirectToAction("DanhSachHoaDon");
+        //    }
 
-            ViewBag.IDThanhToan = hoaDon.IDThanhToan;
-            ViewBag.IDLopHoc = hoaDon.IDLopHoc;
-            ViewBag.IDKhoaHoc = hoaDon.IDKhoaHoc;
-            ViewBag.SoTien = hoaDon.SoTien;
-            ViewBag.NgayThanhToan = hoaDon.NgayThanhToan;
-            ViewBag.TrangThai = hoaDon.TrangThai;
-            ViewBag.NgayXacNhan = hoaDon.NgayXacNhan;
+        //    ViewBag.IDThanhToan = hoaDon.IDThanhToan;
+        //    ViewBag.IDLopHoc = hoaDon.IDLopHoc;
+        //    ViewBag.IDKhoaHoc = hoaDon.IDKhoaHoc;
+        //    ViewBag.SoTien = hoaDon.SoTien;
+        //    ViewBag.NgayThanhToan = hoaDon.NgayThanhToan;
+        //    ViewBag.TrangThai = hoaDon.TrangThai;
+        //    ViewBag.NgayXacNhan = hoaDon.NgayXacNhan;
 
-            // Lấy tên học viên
-            var hocVien = db.HocViens.FirstOrDefault(h => h.IDTenDangNhap == hoaDon.TenDangNhap);
-            ViewBag.TenHocVien = hocVien != null ? hocVien.TenHV : "";
+        //    // Lấy tên học viên
+        //    var hocVien = db.HocViens.FirstOrDefault(h => h.IDTenDangNhap == hoaDon.TenDangNhap);
+        //    ViewBag.TenHocVien = hocVien != null ? hocVien.TenHV : "";
 
-            // Lấy tên lớp
-            var lop = db.LopHocs.FirstOrDefault(l => l.IDLopHoc == hoaDon.IDLopHoc);
-            ViewBag.TenLop = lop != null ? lop.TenLop : "";
+        //    // Lấy tên lớp
+        //    var lop = db.LopHocs.FirstOrDefault(l => l.IDLopHoc == hoaDon.IDLopHoc);
+        //    ViewBag.TenLop = lop != null ? lop.TenLop : "";
 
-            // Lấy tên khóa học
-            var khoaHoc = db.KhoaHocs.FirstOrDefault(k => k.IDKhoaHoc == hoaDon.IDKhoaHoc);
-            ViewBag.TenKhoaHoc = khoaHoc != null ? khoaHoc.TenKhoaHoc : "";
+        //    // Lấy tên khóa học
+        //    var khoaHoc = db.KhoaHocs.FirstOrDefault(k => k.IDKhoaHoc == hoaDon.IDKhoaHoc);
+        //    ViewBag.TenKhoaHoc = khoaHoc != null ? khoaHoc.TenKhoaHoc : "";
 
-            return View();
-        }
+        //    return View();
+        //}
     }
 }

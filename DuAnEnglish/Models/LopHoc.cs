@@ -26,8 +26,6 @@ namespace DuAnEnglish.Models
         public string IDKhoaHoc { get; set; }
         public Nullable<int> IDGiangVien { get; set; }
         public string TenLop { get; set; }
-        public Nullable<System.DateTime> NgayBatDau { get; set; }
-        public Nullable<System.DateTime> NgayKetThuc { get; set; }
         public Nullable<int> Slot { get; set; }
         public string ThuTrongTuan { get; set; }
         public Nullable<System.TimeSpan> GioHocBD { get; set; }

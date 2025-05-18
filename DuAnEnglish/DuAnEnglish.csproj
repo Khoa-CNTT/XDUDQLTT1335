@@ -147,7 +147,11 @@
     <Compile Include="Controllers\HomeHocVienController.cs" />
     <Compile Include="Controllers\KhoaHocController.cs" />
     <Compile Include="Controllers\LopHocController.cs" />
+    <Compile Include="Controllers\QLBaoCaoThongKeController.cs" />
+    <Compile Include="Controllers\QuanLyGiangVienController.cs" />
+    <Compile Include="Controllers\QuanLyKhoaHocController.cs" />
     <Compile Include="Controllers\QuanLyPhongHocController.cs" />
+    <Compile Include="Controllers\QuanLyTaiKhoanController.cs" />
     <Compile Include="Controllers\QuanLyThongBaoGVController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
     <Compile Include="Controllers\ThongTinGiangVienController.cs" />
@@ -246,7 +250,6 @@
     <Content Include="Views\Shared\_LayoutGiangVien.cshtml" />
     <Content Include="Views\KhoaHoc\KhoaHoc.cshtml" />
     <Content Include="Views\KhoaHoc\ChiTietKhoaHoc.cshtml" />
-    <Content Include="Views\Home\TinTuc.cshtml" />
     <Content Include="Views\LopHoc\DanhSachLopHoc.cshtml" />
     <Content Include="Views\KhoaHoc\DangKyKhoaHoc.cshtml" />
     <Content Include="Views\ThanhToan\DanhSachHoaDon.cshtml" />
@@ -267,6 +270,14 @@
     <Content Include="Views\ThongTinGiangVien\ThongTinGiangVien.cshtml" />
     <Content Include="Views\ThongTinHocVien\ThongTinHocVien.cshtml" />
     <Content Include="Views\ThanhToan\XemHoaDon.cshtml" />
+    <Content Include="Views\QuanLyGiangvien\Create.cshtml" />
+    <Content Include="Views\QuanLyGiangvien\Details.cshtml" />
+    <Content Include="Views\QuanLyGiangvien\QuanLyGiangVien.cshtml" />
+    <Content Include="Views\QuanLyKhoaHoc\QuanLyKhoaHoc.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\Create.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\Details.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\QuanLyTaiKhoan.cshtml" />
+    <Content Include="Views\QLBaoCaoThongKe\BaoCaoThongKe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

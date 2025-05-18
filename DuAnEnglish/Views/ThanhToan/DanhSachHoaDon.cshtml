@@ -49,32 +49,33 @@
                                     </a>
 
                                 }
-                                else if (item.TrangThai == "Chờ xử lý" || item.TrangThai == "Đã thanh toán")
+                                else if (item.TrangThai == "Chờ xử lý")
                                 {
                                     <span class="inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-green-500 text-white shadow-md">
                                         Đang xử lý
                                     </span>
                                 }
+                                else if (item.TrangThai == "Đã thanh toán")
+                                {
+                                    <span class="inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-green-500 text-white shadow-md">
+                                        Đã thanh toán
+                                    </span>
+                                }
+                                else if (item.TrangThai == "Từ chối")
+                                {
+                                    <span class="inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-green-500 text-white shadow-md">
+                                        Lỗi
+                                    </span>
+                                }
                             </td>
                             <td class="px-4 py-2">
-                                @if (item.TrangThai == "Chưa thanh toán")
-                                {
                                     <a href="@Url.Action("XoaHoaDon", "ThanhToan", new { id = item.IDThanhToan })"
                                        class="btn-xoa inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600
                                     bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-1000 ease-out
                                     text-white shadow-md">
                                         Xóa hóa đơn
                                     </a>
-                                }
-                                else if (item.TrangThai == "Chờ xử lý" || item.TrangThai == "Đã thanh toán")
-                                {
-                                    <a href="@Url.Action("XemHoaDon", "ThanhToan", new { id = item.IDThanhToan })"
-                                       class="inline-block py-3 px-6 text-lg font-semibold rounded-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600
-                                    bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-1000 ease-out
-                                    text-white shadow-md">
-                                        Xem hóa đơn
-                                    </a>
-                                }
+                               
                             </td>
                         </tr>
                     }

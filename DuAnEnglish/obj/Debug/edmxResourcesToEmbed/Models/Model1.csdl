@@ -54,6 +54,8 @@
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ChuyenMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BangCap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__GiangVien__IDTen__3E52440B" FromRole="GiangVien" ToRole="TaiKhoan" />
     <NavigationProperty Name="LopHocs" Relationship="Self.FK__LopHoc__IDGiangV__45F365D3" FromRole="GiangVien" ToRole="LopHoc" />
   </EntityType>
@@ -125,8 +127,6 @@
     <Property Name="IDKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IDGiangVien" Type="Int32" />
     <Property Name="TenLop" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
-    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
     <Property Name="Slot" Type="Int32" />
     <Property Name="ThuTrongTuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GioHocBD" Type="Time" Precision="7" />
